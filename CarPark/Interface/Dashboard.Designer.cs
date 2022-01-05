@@ -32,6 +32,7 @@ namespace CarPark
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.gpbInput = new System.Windows.Forms.GroupBox();
             this.tbxTimeOut = new System.Windows.Forms.TextBox();
@@ -276,12 +277,19 @@ namespace CarPark
             this.dtgData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgData.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dtgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgData.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgData.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgData.Location = new System.Drawing.Point(31, 282);
             this.dtgData.Margin = new System.Windows.Forms.Padding(4);
             this.dtgData.Name = "dtgData";
             this.dtgData.RowHeadersWidth = 51;
-            this.dtgData.DefaultCellStyle.ForeColor = Color.Black;
             this.dtgData.Size = new System.Drawing.Size(1107, 503);
             this.dtgData.TabIndex = 2;
             this.dtgData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgData_CellClick);
@@ -390,7 +398,7 @@ namespace CarPark
             this.btnSales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(184)))), ((int)(((byte)(105)))));
             this.btnSales.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSales.BorderRadius = 4;
-            this.btnSales.ButtonText = "SALES";
+            this.btnSales.ButtonText = "SALES REPORT";
             this.btnSales.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSales.DisabledColor = System.Drawing.Color.Gray;
             this.btnSales.Iconcolor = System.Drawing.Color.Transparent;
@@ -412,9 +420,9 @@ namespace CarPark
             this.btnSales.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(184)))), ((int)(((byte)(105)))));
             this.btnSales.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSales.selected = false;
-            this.btnSales.Size = new System.Drawing.Size(172, 54);
+            this.btnSales.Size = new System.Drawing.Size(224, 54);
             this.btnSales.TabIndex = 9;
-            this.btnSales.Text = "SALES";
+            this.btnSales.Text = "SALES REPORT";
             this.btnSales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSales.Textcolor = System.Drawing.Color.White;
             this.btnSales.TextFont = new System.Drawing.Font("Open Sans SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
