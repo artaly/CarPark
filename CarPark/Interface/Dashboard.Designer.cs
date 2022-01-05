@@ -32,7 +32,7 @@ namespace CarPark
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.gpbInput = new System.Windows.Forms.GroupBox();
             this.tbxTimeOut = new System.Windows.Forms.TextBox();
@@ -78,30 +78,32 @@ namespace CarPark
             this.gpbInput.Controls.Add(this.tbxBrand);
             this.gpbInput.Controls.Add(this.lblLicense);
             this.gpbInput.Controls.Add(this.tbxLicense);
-            this.gpbInput.Location = new System.Drawing.Point(1165, 282);
+            this.gpbInput.Location = new System.Drawing.Point(1362, 306);
             this.gpbInput.Margin = new System.Windows.Forms.Padding(4);
             this.gpbInput.Name = "gpbInput";
             this.gpbInput.Padding = new System.Windows.Forms.Padding(4);
-            this.gpbInput.Size = new System.Drawing.Size(379, 503);
+            this.gpbInput.Size = new System.Drawing.Size(509, 665);
             this.gpbInput.TabIndex = 0;
             this.gpbInput.TabStop = false;
             // 
             // tbxTimeOut
             // 
             this.tbxTimeOut.Enabled = false;
-            this.tbxTimeOut.Location = new System.Drawing.Point(177, 321);
+            this.tbxTimeOut.Location = new System.Drawing.Point(300, 404);
             this.tbxTimeOut.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxTimeOut.Multiline = true;
             this.tbxTimeOut.Name = "tbxTimeOut";
-            this.tbxTimeOut.Size = new System.Drawing.Size(168, 22);
+            this.tbxTimeOut.Size = new System.Drawing.Size(168, 41);
             this.tbxTimeOut.TabIndex = 17;
             // 
             // tbxTimeIn
             // 
             this.tbxTimeIn.Enabled = false;
-            this.tbxTimeIn.Location = new System.Drawing.Point(177, 227);
+            this.tbxTimeIn.Location = new System.Drawing.Point(301, 283);
             this.tbxTimeIn.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxTimeIn.Multiline = true;
             this.tbxTimeIn.Name = "tbxTimeIn";
-            this.tbxTimeIn.Size = new System.Drawing.Size(168, 22);
+            this.tbxTimeIn.Size = new System.Drawing.Size(168, 41);
             this.tbxTimeIn.TabIndex = 16;
             // 
             // btnTimeOut
@@ -125,7 +127,7 @@ namespace CarPark
             this.btnTimeOut.IconVisible = true;
             this.btnTimeOut.IconZoom = 90D;
             this.btnTimeOut.IsTab = false;
-            this.btnTimeOut.Location = new System.Drawing.Point(177, 357);
+            this.btnTimeOut.Location = new System.Drawing.Point(299, 454);
             this.btnTimeOut.Margin = new System.Windows.Forms.Padding(5);
             this.btnTimeOut.Name = "btnTimeOut";
             this.btnTimeOut.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(117)))), ((int)(((byte)(110)))));
@@ -161,7 +163,7 @@ namespace CarPark
             this.btnTimeIn.IconVisible = true;
             this.btnTimeIn.IconZoom = 90D;
             this.btnTimeIn.IsTab = false;
-            this.btnTimeIn.Location = new System.Drawing.Point(177, 259);
+            this.btnTimeIn.Location = new System.Drawing.Point(300, 333);
             this.btnTimeIn.Margin = new System.Windows.Forms.Padding(5);
             this.btnTimeIn.Name = "btnTimeIn";
             this.btnTimeIn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(178)))), ((int)(((byte)(167)))));
@@ -180,12 +182,12 @@ namespace CarPark
             // 
             this.lblTimeout.AutoSize = true;
             this.lblTimeout.BackColor = System.Drawing.Color.Transparent;
-            this.lblTimeout.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimeout.Font = new System.Drawing.Font("Corbel", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimeout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTimeout.Location = new System.Drawing.Point(63, 321);
+            this.lblTimeout.Location = new System.Drawing.Point(110, 401);
             this.lblTimeout.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTimeout.Name = "lblTimeout";
-            this.lblTimeout.Size = new System.Drawing.Size(95, 24);
+            this.lblTimeout.Size = new System.Drawing.Size(165, 41);
             this.lblTimeout.TabIndex = 7;
             this.lblTimeout.Text = "TIME OUT";
             // 
@@ -193,12 +195,12 @@ namespace CarPark
             // 
             this.lblTimeIn.AutoSize = true;
             this.lblTimeIn.BackColor = System.Drawing.Color.Transparent;
-            this.lblTimeIn.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimeIn.Font = new System.Drawing.Font("Corbel", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimeIn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTimeIn.Location = new System.Drawing.Point(82, 227);
+            this.lblTimeIn.Location = new System.Drawing.Point(144, 283);
             this.lblTimeIn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTimeIn.Name = "lblTimeIn";
-            this.lblTimeIn.Size = new System.Drawing.Size(76, 24);
+            this.lblTimeIn.Size = new System.Drawing.Size(131, 41);
             this.lblTimeIn.TabIndex = 6;
             this.lblTimeIn.Text = "TIME IN";
             // 
@@ -206,68 +208,71 @@ namespace CarPark
             // 
             this.lblColor.AutoSize = true;
             this.lblColor.BackColor = System.Drawing.Color.Transparent;
-            this.lblColor.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColor.Font = new System.Drawing.Font("Corbel", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblColor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblColor.Location = new System.Drawing.Point(85, 179);
+            this.lblColor.Location = new System.Drawing.Point(150, 199);
             this.lblColor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(73, 24);
+            this.lblColor.Size = new System.Drawing.Size(125, 41);
             this.lblColor.TabIndex = 5;
             this.lblColor.Text = "COLOR";
             // 
             // tbxColor
             // 
-            this.tbxColor.Location = new System.Drawing.Point(177, 179);
+            this.tbxColor.Location = new System.Drawing.Point(301, 199);
             this.tbxColor.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxColor.Multiline = true;
             this.tbxColor.Name = "tbxColor";
-            this.tbxColor.Size = new System.Drawing.Size(168, 22);
+            this.tbxColor.Size = new System.Drawing.Size(168, 41);
             this.tbxColor.TabIndex = 4;
             // 
             // lblBrand
             // 
             this.lblBrand.AutoSize = true;
             this.lblBrand.BackColor = System.Drawing.Color.Transparent;
-            this.lblBrand.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrand.Font = new System.Drawing.Font("Corbel", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBrand.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblBrand.Location = new System.Drawing.Point(84, 133);
+            this.lblBrand.Location = new System.Drawing.Point(148, 123);
             this.lblBrand.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(74, 24);
+            this.lblBrand.Size = new System.Drawing.Size(127, 41);
             this.lblBrand.TabIndex = 3;
             this.lblBrand.Text = "BRAND";
             // 
             // tbxBrand
             // 
-            this.tbxBrand.Location = new System.Drawing.Point(177, 133);
+            this.tbxBrand.Location = new System.Drawing.Point(301, 123);
             this.tbxBrand.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxBrand.Multiline = true;
             this.tbxBrand.Name = "tbxBrand";
-            this.tbxBrand.Size = new System.Drawing.Size(168, 22);
+            this.tbxBrand.Size = new System.Drawing.Size(168, 41);
             this.tbxBrand.TabIndex = 2;
             // 
             // lblLicense
             // 
             this.lblLicense.AutoSize = true;
             this.lblLicense.BackColor = System.Drawing.Color.Transparent;
-            this.lblLicense.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLicense.Font = new System.Drawing.Font("Corbel", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLicense.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblLicense.Location = new System.Drawing.Point(15, 80);
+            this.lblLicense.Location = new System.Drawing.Point(28, 52);
             this.lblLicense.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLicense.Name = "lblLicense";
-            this.lblLicense.Size = new System.Drawing.Size(143, 24);
+            this.lblLicense.Size = new System.Drawing.Size(247, 41);
             this.lblLicense.TabIndex = 1;
             this.lblLicense.Text = "LICENSE PLATE";
             // 
             // tbxLicense
             // 
-            this.tbxLicense.Location = new System.Drawing.Point(177, 80);
+            this.tbxLicense.Location = new System.Drawing.Point(301, 52);
             this.tbxLicense.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxLicense.Multiline = true;
             this.tbxLicense.Name = "tbxLicense";
-            this.tbxLicense.Size = new System.Drawing.Size(168, 22);
+            this.tbxLicense.Size = new System.Drawing.Size(168, 41);
             this.tbxLicense.TabIndex = 0;
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(1200, 33);
+            this.monthCalendar1.Location = new System.Drawing.Point(1609, 33);
             this.monthCalendar1.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 1;
@@ -277,82 +282,82 @@ namespace CarPark
             this.dtgData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgData.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dtgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgData.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgData.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgData.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtgData.Location = new System.Drawing.Point(31, 282);
+            this.dtgData.Location = new System.Drawing.Point(38, 306);
             this.dtgData.Margin = new System.Windows.Forms.Padding(4);
             this.dtgData.Name = "dtgData";
             this.dtgData.RowHeadersWidth = 51;
-            this.dtgData.Size = new System.Drawing.Size(1107, 503);
+            this.dtgData.Size = new System.Drawing.Size(1278, 658);
             this.dtgData.TabIndex = 2;
             this.dtgData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgData_CellClick);
             // 
             // lblOccupied
             // 
             this.lblOccupied.AutoSize = true;
-            this.lblOccupied.Font = new System.Drawing.Font("Corbel", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOccupied.Font = new System.Drawing.Font("Corbel", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOccupied.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblOccupied.Location = new System.Drawing.Point(327, 20);
+            this.lblOccupied.Location = new System.Drawing.Point(412, 20);
             this.lblOccupied.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOccupied.Name = "lblOccupied";
-            this.lblOccupied.Size = new System.Drawing.Size(208, 49);
+            this.lblOccupied.Size = new System.Drawing.Size(307, 73);
             this.lblOccupied.TabIndex = 3;
             this.lblOccupied.Text = "OCCUPIED";
             // 
             // lblAvailable
             // 
             this.lblAvailable.AutoSize = true;
-            this.lblAvailable.Font = new System.Drawing.Font("Corbel", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvailable.Font = new System.Drawing.Font("Corbel", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAvailable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblAvailable.Location = new System.Drawing.Point(41, 20);
             this.lblAvailable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAvailable.Name = "lblAvailable";
-            this.lblAvailable.Size = new System.Drawing.Size(215, 49);
+            this.lblAvailable.Size = new System.Drawing.Size(322, 73);
             this.lblAvailable.TabIndex = 4;
             this.lblAvailable.Text = "AVAILABLE";
             // 
             // lblAvailableSlot
             // 
             this.lblAvailableSlot.AutoSize = true;
-            this.lblAvailableSlot.Font = new System.Drawing.Font("Corbel", 72F);
+            this.lblAvailableSlot.Font = new System.Drawing.Font("Corbel", 79.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAvailableSlot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(178)))), ((int)(((byte)(167)))));
-            this.lblAvailableSlot.Location = new System.Drawing.Point(84, 79);
+            this.lblAvailableSlot.Location = new System.Drawing.Point(146, 66);
             this.lblAvailableSlot.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAvailableSlot.Name = "lblAvailableSlot";
-            this.lblAvailableSlot.Size = new System.Drawing.Size(124, 146);
+            this.lblAvailableSlot.Size = new System.Drawing.Size(139, 164);
             this.lblAvailableSlot.TabIndex = 5;
             this.lblAvailableSlot.Text = "0";
             // 
             // lblOccupiedSlot
             // 
             this.lblOccupiedSlot.AutoSize = true;
-            this.lblOccupiedSlot.Font = new System.Drawing.Font("Corbel", 72F);
+            this.lblOccupiedSlot.Font = new System.Drawing.Font("Corbel", 79.8F);
             this.lblOccupiedSlot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(117)))), ((int)(((byte)(110)))));
-            this.lblOccupiedSlot.Location = new System.Drawing.Point(369, 79);
+            this.lblOccupiedSlot.Location = new System.Drawing.Point(497, 66);
             this.lblOccupiedSlot.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOccupiedSlot.Name = "lblOccupiedSlot";
-            this.lblOccupiedSlot.Size = new System.Drawing.Size(124, 146);
+            this.lblOccupiedSlot.Size = new System.Drawing.Size(139, 164);
             this.lblOccupiedSlot.TabIndex = 6;
             this.lblOccupiedSlot.Text = "0";
             // 
             // gbpSlots
             // 
-            this.gbpSlots.Controls.Add(this.lblOccupiedSlot);
             this.gbpSlots.Controls.Add(this.lblOccupied);
-            this.gbpSlots.Controls.Add(this.lblAvailableSlot);
             this.gbpSlots.Controls.Add(this.lblAvailable);
-            this.gbpSlots.Location = new System.Drawing.Point(552, 15);
+            this.gbpSlots.Controls.Add(this.lblAvailableSlot);
+            this.gbpSlots.Controls.Add(this.lblOccupiedSlot);
+            this.gbpSlots.Location = new System.Drawing.Point(38, 13);
             this.gbpSlots.Margin = new System.Windows.Forms.Padding(4);
             this.gbpSlots.Name = "gbpSlots";
             this.gbpSlots.Padding = new System.Windows.Forms.Padding(4);
-            this.gbpSlots.Size = new System.Drawing.Size(585, 238);
+            this.gbpSlots.Size = new System.Drawing.Size(790, 269);
             this.gbpSlots.TabIndex = 7;
             this.gbpSlots.TabStop = false;
             // 
@@ -377,7 +382,7 @@ namespace CarPark
             this.btnDelete.IconVisible = true;
             this.btnDelete.IconZoom = 90D;
             this.btnDelete.IsTab = false;
-            this.btnDelete.Location = new System.Drawing.Point(31, 793);
+            this.btnDelete.Location = new System.Drawing.Point(38, 984);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(38)))));
@@ -413,7 +418,7 @@ namespace CarPark
             this.btnSales.IconVisible = true;
             this.btnSales.IconZoom = 90D;
             this.btnSales.IsTab = false;
-            this.btnSales.Location = new System.Drawing.Point(211, 793);
+            this.btnSales.Location = new System.Drawing.Point(218, 984);
             this.btnSales.Margin = new System.Windows.Forms.Padding(5);
             this.btnSales.Name = "btnSales";
             this.btnSales.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(184)))), ((int)(((byte)(105)))));
@@ -431,7 +436,7 @@ namespace CarPark
             // lblClose
             // 
             this.lblClose.Image = ((System.Drawing.Image)(resources.GetObject("lblClose.Image")));
-            this.lblClose.Location = new System.Drawing.Point(1507, 13);
+            this.lblClose.Location = new System.Drawing.Point(1887, 13);
             this.lblClose.Margin = new System.Windows.Forms.Padding(4);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(37, 34);
@@ -449,7 +454,7 @@ namespace CarPark
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1937, 1080);
             this.Controls.Add(this.lblClose);
             this.Controls.Add(this.btnSales);
             this.Controls.Add(this.btnDelete);
