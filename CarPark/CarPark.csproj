@@ -52,6 +52,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\UserSQL.cs" />
+    <Compile Include="Interface\Receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\Receipt.Designer.cs">
+      <DependentUpon>Receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\DashboardEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\DashboardEmployee.Designer.cs">
+      <DependentUpon>DashboardEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interface\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +76,12 @@
     <Compile Include="Interface\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interface\PolicyList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\PolicyList.Designer.cs">
+      <DependentUpon>PolicyList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interface\TransactionSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,11 +90,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Interface\Receipt.resx">
+      <DependentUpon>Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\DashboardEmployee.resx">
+      <DependentUpon>DashboardEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interface\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interface\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\PolicyList.resx">
+      <DependentUpon>PolicyList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interface\TransactionSales.resx">
       <DependentUpon>TransactionSales.cs</DependentUpon>
