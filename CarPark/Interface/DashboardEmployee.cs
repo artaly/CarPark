@@ -14,9 +14,9 @@ using CarPark.Interface;
 
 namespace CarPark
 {
-    public partial class Dashboard : Form
+    public partial class DashboardEmployee : Form
     {
-        public Dashboard()
+        public DashboardEmployee()
         {
             InitializeComponent();
         }
@@ -411,12 +411,6 @@ namespace CarPark
         private void btnSales_Click(object sender, EventArgs e)
         {
             new TransactionSales().Show();
-            this.Hide();
-        }
-
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
-        {
-            new PolicyList().Show();
             this.Hide();
         }
     }
