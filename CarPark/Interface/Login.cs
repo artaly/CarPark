@@ -24,7 +24,7 @@ namespace CarPark.Interface
 
             if (tbxUsername.Text == "" && tbxPassword.Text == "")
             {
-                new Dashboard().Show();
+                new AdminDashboard().Show();
                 this.Hide();
             }
             else
