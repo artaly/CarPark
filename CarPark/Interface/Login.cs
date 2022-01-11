@@ -27,6 +27,52 @@ namespace CarPark.Interface
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (tbxUsername.Text == "")
+            {
+                MessageBox.Show("Enter your username first", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tbxUsername.Focus();
+            }
+            else if (tbxPassword.Text == "")
+            {
+                MessageBox.Show("Enter your password first", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tbxPassword.Focus();
+            }
+            else
+            {
+                try
+                {
+                    QuerySelect = "SELECT * FROM UserAccount WHERE username='" + tbxUsername.Text + "' AND password='" + tbxPassword.Text + "'";
+                    con.Close();
+                    con.Open();
+                    cmd = new SqlCommand(QuerySelect, con);
+                    reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        GetUserAccountID = reader["id"].ToString();
+                        GetUserAccountType = reader["accounttype"].ToString();
+                        GetUserAccountName = reader["name"].ToString();
+                        GetUserAccountUsername = reader["username"].ToString();
+                        Home h = new Home();
+                        h.Show();
+                        ClearAll();
+                        reader.Close();
+
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Account! Try Again...", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ClearAll();
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            /*
             string query = "SELECT role from employees WHERE username=@username and password=@password";
             string returnValue = "";
             using (con)
@@ -63,7 +109,7 @@ namespace CarPark.Interface
                 tbxUsername.Text = "";
                 tbxPassword.Text = "";
             }
-
+            */
         }
 
         private void lblClose_Click_1(object sender, EventArgs e)
