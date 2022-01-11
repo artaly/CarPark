@@ -32,24 +32,61 @@ namespace CarPark.Interface
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnParkingMonitoring = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSalesReport = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dshDate = new System.Windows.Forms.Label();
             this.timerDash = new System.Windows.Forms.Timer(this.components);
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panel1.Controls.Add(this.btnSalesReport);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(25)))), ((int)(((byte)(69)))));
+            this.panel1.Controls.Add(this.bunifuFlatButton1);
+            this.panel1.Controls.Add(this.btnParkingMonitoring);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(334, 1081);
             this.panel1.TabIndex = 0;
+            // 
+            // btnParkingMonitoring
+            // 
+            this.btnParkingMonitoring.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(25)))), ((int)(((byte)(69)))));
+            this.btnParkingMonitoring.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(25)))), ((int)(((byte)(69)))));
+            this.btnParkingMonitoring.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnParkingMonitoring.BorderRadius = 0;
+            this.btnParkingMonitoring.ButtonText = "Park Monitoring";
+            this.btnParkingMonitoring.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnParkingMonitoring.DisabledColor = System.Drawing.Color.Gray;
+            this.btnParkingMonitoring.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnParkingMonitoring.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnParkingMonitoring.Iconimage")));
+            this.btnParkingMonitoring.Iconimage_right = null;
+            this.btnParkingMonitoring.Iconimage_right_Selected = null;
+            this.btnParkingMonitoring.Iconimage_Selected = null;
+            this.btnParkingMonitoring.IconMarginLeft = 0;
+            this.btnParkingMonitoring.IconMarginRight = 0;
+            this.btnParkingMonitoring.IconRightVisible = true;
+            this.btnParkingMonitoring.IconRightZoom = 0D;
+            this.btnParkingMonitoring.IconVisible = true;
+            this.btnParkingMonitoring.IconZoom = 90D;
+            this.btnParkingMonitoring.IsTab = false;
+            this.btnParkingMonitoring.Location = new System.Drawing.Point(0, 111);
+            this.btnParkingMonitoring.Margin = new System.Windows.Forms.Padding(0);
+            this.btnParkingMonitoring.Name = "btnParkingMonitoring";
+            this.btnParkingMonitoring.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(25)))), ((int)(((byte)(69)))));
+            this.btnParkingMonitoring.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(25)))), ((int)(((byte)(69)))));
+            this.btnParkingMonitoring.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnParkingMonitoring.selected = false;
+            this.btnParkingMonitoring.Size = new System.Drawing.Size(342, 74);
+            this.btnParkingMonitoring.TabIndex = 12;
+            this.btnParkingMonitoring.Text = "Park Monitoring";
+            this.btnParkingMonitoring.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnParkingMonitoring.Textcolor = System.Drawing.Color.White;
+            this.btnParkingMonitoring.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // panel2
             // 
@@ -60,41 +97,6 @@ namespace CarPark.Interface
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(334, 111);
             this.panel2.TabIndex = 0;
-            // 
-            // btnSalesReport
-            // 
-            this.btnSalesReport.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(25)))), ((int)(((byte)(69)))));
-            this.btnSalesReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
-            this.btnSalesReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalesReport.BorderRadius = 0;
-            this.btnSalesReport.ButtonText = "List Of Items";
-            this.btnSalesReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalesReport.DisabledColor = System.Drawing.Color.Gray;
-            this.btnSalesReport.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnSalesReport.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnSalesReport.Iconimage")));
-            this.btnSalesReport.Iconimage_right = null;
-            this.btnSalesReport.Iconimage_right_Selected = null;
-            this.btnSalesReport.Iconimage_Selected = null;
-            this.btnSalesReport.IconMarginLeft = 0;
-            this.btnSalesReport.IconMarginRight = 0;
-            this.btnSalesReport.IconRightVisible = true;
-            this.btnSalesReport.IconRightZoom = 0D;
-            this.btnSalesReport.IconVisible = true;
-            this.btnSalesReport.IconZoom = 90D;
-            this.btnSalesReport.IsTab = false;
-            this.btnSalesReport.Location = new System.Drawing.Point(0, 104);
-            this.btnSalesReport.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSalesReport.Name = "btnSalesReport";
-            this.btnSalesReport.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(25)))), ((int)(((byte)(69)))));
-            this.btnSalesReport.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(25)))), ((int)(((byte)(69)))));
-            this.btnSalesReport.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnSalesReport.selected = false;
-            this.btnSalesReport.Size = new System.Drawing.Size(342, 74);
-            this.btnSalesReport.TabIndex = 12;
-            this.btnSalesReport.Text = "List Of Items";
-            this.btnSalesReport.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSalesReport.Textcolor = System.Drawing.Color.White;
-            this.btnSalesReport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // dshDate
             // 
@@ -108,10 +110,46 @@ namespace CarPark.Interface
             this.dshDate.TabIndex = 2;
             this.dshDate.Text = "Date Placeholder";
             // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(25)))), ((int)(((byte)(69)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(25)))), ((int)(((byte)(69)))));
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton1.BorderRadius = 0;
+            this.bunifuFlatButton1.ButtonText = "Manage User";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
+            this.bunifuFlatButton1.Iconimage_right = null;
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 0;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = true;
+            this.bunifuFlatButton1.IconZoom = 90D;
+            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 184);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(25)))), ((int)(((byte)(69)))));
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(25)))), ((int)(((byte)(69)))));
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(342, 74);
+            this.bunifuFlatButton1.TabIndex = 13;
+            this.bunifuFlatButton1.Text = "Manage User";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1937, 1081);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -130,8 +168,9 @@ namespace CarPark.Interface
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuFlatButton btnSalesReport;
+        private Bunifu.Framework.UI.BunifuFlatButton btnParkingMonitoring;
         private System.Windows.Forms.Label dshDate;
         private System.Windows.Forms.Timer timerDash;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
     }
 }
