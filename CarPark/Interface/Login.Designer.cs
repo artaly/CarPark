@@ -43,7 +43,7 @@ namespace CarPark.Interface
             // 
             this.tbxUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbxUsername.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxUsername.ForeColor = System.Drawing.Color.White;
+            this.tbxUsername.ForeColor = System.Drawing.Color.Black;
             this.tbxUsername.HintForeColor = System.Drawing.Color.Black;
             this.tbxUsername.HintText = "Username";
             this.tbxUsername.isPassword = false;
@@ -62,7 +62,7 @@ namespace CarPark.Interface
             // 
             this.tbxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbxPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPassword.ForeColor = System.Drawing.Color.White;
+            this.tbxPassword.ForeColor = System.Drawing.Color.Black;
             this.tbxPassword.HintForeColor = System.Drawing.Color.Black;
             this.tbxPassword.HintText = "Password";
             this.tbxPassword.isPassword = true;
@@ -99,7 +99,7 @@ namespace CarPark.Interface
             this.btnLogin.IconZoom = 90D;
             this.btnLogin.IsTab = false;
             this.btnLogin.Location = new System.Drawing.Point(127, 535);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(5);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
             this.btnLogin.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(110)))), ((int)(((byte)(154)))));
@@ -147,7 +147,7 @@ namespace CarPark.Interface
             this.Controls.Add(this.tbxPassword);
             this.Controls.Add(this.tbxUsername);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
