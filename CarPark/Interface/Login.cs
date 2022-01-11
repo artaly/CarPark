@@ -70,5 +70,10 @@ namespace CarPark.Interface
         {
             Application.Exit();
         }
+
+        private void lblForgotPassword_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Please contact administrator");
+        }
     }
 }
