@@ -406,6 +406,10 @@ namespace CarPark
         {
             tbxTimeIn.Text = DateTime.Now.ToString("h:mm:ss tt");
             tbxTimeOut.Text = DateTime.Now.ToString("h:mm:ss tt");
+
+
+            lblUserType.Text = Login.GetUserAccountType.ToString();
+            lblUser.Text = Login.GetUserAccountName.ToString();
         }
 
         private void btnSales_Click(object sender, EventArgs e)
@@ -418,6 +422,11 @@ namespace CarPark
         {
             new PolicyList().Show();
             this.Hide();
+        }
+
+        private void lblUserType_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

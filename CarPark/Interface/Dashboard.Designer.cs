@@ -32,9 +32,11 @@ namespace CarPark
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.gpbInput = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxTimeOut = new System.Windows.Forms.TextBox();
@@ -62,21 +64,22 @@ namespace CarPark
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblUserType = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpbInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgData)).BeginInit();
             this.gbpSlots.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lblClose)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbInput
             // 
-            this.gpbInput.Controls.Add(this.checkBox1);
             this.gpbInput.Controls.Add(this.label2);
+            this.gpbInput.Controls.Add(this.checkBox1);
             this.gpbInput.Controls.Add(this.comboBox1);
             this.gpbInput.Controls.Add(this.label1);
             this.gpbInput.Controls.Add(this.tbxTimeOut);
@@ -92,12 +95,35 @@ namespace CarPark
             this.gpbInput.Controls.Add(this.lblLicense);
             this.gpbInput.Controls.Add(this.tbxLicense);
             this.gpbInput.Location = new System.Drawing.Point(1363, 306);
-            this.gpbInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbInput.Margin = new System.Windows.Forms.Padding(4);
             this.gpbInput.Name = "gpbInput";
-            this.gpbInput.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbInput.Padding = new System.Windows.Forms.Padding(4);
             this.gpbInput.Size = new System.Drawing.Size(509, 665);
             this.gpbInput.TabIndex = 0;
             this.gpbInput.TabStop = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(301, 603);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(98, 21);
+            this.checkBox1.TabIndex = 22;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Corbel", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(333, 595);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 29);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Abandoned?";
             // 
             // comboBox1
             // 
@@ -107,7 +133,7 @@ namespace CarPark
             "Standard",
             "Luxury"});
             this.comboBox1.Location = new System.Drawing.Point(301, 276);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.MaxDropDownItems = 2;
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(168, 40);
@@ -131,7 +157,7 @@ namespace CarPark
             // 
             this.tbxTimeOut.Enabled = false;
             this.tbxTimeOut.Location = new System.Drawing.Point(299, 470);
-            this.tbxTimeOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxTimeOut.Margin = new System.Windows.Forms.Padding(4);
             this.tbxTimeOut.Multiline = true;
             this.tbxTimeOut.Name = "tbxTimeOut";
             this.tbxTimeOut.Size = new System.Drawing.Size(168, 41);
@@ -141,7 +167,7 @@ namespace CarPark
             // 
             this.tbxTimeIn.Enabled = false;
             this.tbxTimeIn.Location = new System.Drawing.Point(300, 350);
-            this.tbxTimeIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxTimeIn.Margin = new System.Windows.Forms.Padding(4);
             this.tbxTimeIn.Multiline = true;
             this.tbxTimeIn.Name = "tbxTimeIn";
             this.tbxTimeIn.Size = new System.Drawing.Size(168, 41);
@@ -169,7 +195,7 @@ namespace CarPark
             this.btnTimeOut.IconZoom = 90D;
             this.btnTimeOut.IsTab = false;
             this.btnTimeOut.Location = new System.Drawing.Point(297, 521);
-            this.btnTimeOut.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnTimeOut.Margin = new System.Windows.Forms.Padding(5);
             this.btnTimeOut.Name = "btnTimeOut";
             this.btnTimeOut.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(117)))), ((int)(((byte)(110)))));
             this.btnTimeOut.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(125)))), ((int)(((byte)(89)))));
@@ -205,7 +231,7 @@ namespace CarPark
             this.btnTimeIn.IconZoom = 90D;
             this.btnTimeIn.IsTab = false;
             this.btnTimeIn.Location = new System.Drawing.Point(299, 400);
-            this.btnTimeIn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnTimeIn.Margin = new System.Windows.Forms.Padding(5);
             this.btnTimeIn.Name = "btnTimeIn";
             this.btnTimeIn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(178)))), ((int)(((byte)(167)))));
             this.btnTimeIn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(239)))), ((int)(((byte)(172)))));
@@ -261,7 +287,7 @@ namespace CarPark
             // tbxColor
             // 
             this.tbxColor.Location = new System.Drawing.Point(301, 199);
-            this.tbxColor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxColor.Margin = new System.Windows.Forms.Padding(4);
             this.tbxColor.Multiline = true;
             this.tbxColor.Name = "tbxColor";
             this.tbxColor.Size = new System.Drawing.Size(168, 41);
@@ -283,7 +309,7 @@ namespace CarPark
             // tbxBrand
             // 
             this.tbxBrand.Location = new System.Drawing.Point(301, 123);
-            this.tbxBrand.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxBrand.Margin = new System.Windows.Forms.Padding(4);
             this.tbxBrand.Multiline = true;
             this.tbxBrand.Name = "tbxBrand";
             this.tbxBrand.Size = new System.Drawing.Size(168, 41);
@@ -305,7 +331,7 @@ namespace CarPark
             // tbxLicense
             // 
             this.tbxLicense.Location = new System.Drawing.Point(301, 52);
-            this.tbxLicense.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxLicense.Margin = new System.Windows.Forms.Padding(4);
             this.tbxLicense.Multiline = true;
             this.tbxLicense.Name = "tbxLicense";
             this.tbxLicense.Size = new System.Drawing.Size(168, 41);
@@ -313,7 +339,7 @@ namespace CarPark
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(1609, 33);
+            this.monthCalendar1.Location = new System.Drawing.Point(1641, 34);
             this.monthCalendar1.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 1;
@@ -323,17 +349,17 @@ namespace CarPark
             this.dtgData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgData.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dtgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgData.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgData.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgData.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgData.Location = new System.Drawing.Point(37, 306);
-            this.dtgData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgData.Margin = new System.Windows.Forms.Padding(4);
             this.dtgData.Name = "dtgData";
             this.dtgData.RowHeadersWidth = 51;
             this.dtgData.Size = new System.Drawing.Size(1277, 658);
@@ -395,9 +421,9 @@ namespace CarPark
             this.gbpSlots.Controls.Add(this.lblAvailableSlot);
             this.gbpSlots.Controls.Add(this.lblOccupiedSlot);
             this.gbpSlots.Location = new System.Drawing.Point(37, 14);
-            this.gbpSlots.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbpSlots.Margin = new System.Windows.Forms.Padding(4);
             this.gbpSlots.Name = "gbpSlots";
-            this.gbpSlots.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbpSlots.Padding = new System.Windows.Forms.Padding(4);
             this.gbpSlots.Size = new System.Drawing.Size(789, 270);
             this.gbpSlots.TabIndex = 7;
             this.gbpSlots.TabStop = false;
@@ -424,7 +450,7 @@ namespace CarPark
             this.btnDelete.IconZoom = 90D;
             this.btnDelete.IsTab = false;
             this.btnDelete.Location = new System.Drawing.Point(37, 985);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(38)))));
             this.btnDelete.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(30)))), ((int)(((byte)(49)))));
@@ -460,7 +486,7 @@ namespace CarPark
             this.btnSales.IconZoom = 90D;
             this.btnSales.IsTab = false;
             this.btnSales.Location = new System.Drawing.Point(219, 985);
-            this.btnSales.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnSales.Margin = new System.Windows.Forms.Padding(5);
             this.btnSales.Name = "btnSales";
             this.btnSales.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(184)))), ((int)(((byte)(105)))));
             this.btnSales.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(184)))), ((int)(((byte)(105)))));
@@ -477,8 +503,8 @@ namespace CarPark
             // lblClose
             // 
             this.lblClose.Image = ((System.Drawing.Image)(resources.GetObject("lblClose.Image")));
-            this.lblClose.Location = new System.Drawing.Point(1887, 14);
-            this.lblClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblClose.Location = new System.Drawing.Point(2011, 1);
+            this.lblClose.Margin = new System.Windows.Forms.Padding(4);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(37, 34);
             this.lblClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -512,7 +538,7 @@ namespace CarPark
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(453, 985);
-            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(178)))), ((int)(((byte)(167)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(239)))), ((int)(((byte)(172)))));
@@ -528,28 +554,30 @@ namespace CarPark
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lblUser);
+            this.groupBox1.Controls.Add(this.lblUserType);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(889, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(1203, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(471, 199);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(413, 269);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
-            // label4
+            // lblUserType
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Corbel", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(221, 33);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 40);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "ADMIN";
+            this.lblUserType.AutoSize = true;
+            this.lblUserType.BackColor = System.Drawing.Color.Transparent;
+            this.lblUserType.Font = new System.Drawing.Font("Corbel", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserType.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblUserType.Location = new System.Drawing.Point(221, 33);
+            this.lblUserType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUserType.Name = "lblUserType";
+            this.lblUserType.Size = new System.Drawing.Size(118, 40);
+            this.lblUserType.TabIndex = 3;
+            this.lblUserType.Text = "ADMIN";
+            this.lblUserType.Click += new System.EventHandler(this.lblUserType_Click);
             // 
             // label5
             // 
@@ -564,35 +592,36 @@ namespace CarPark
             this.label5.TabIndex = 1;
             this.label5.Text = "USERTYPE:";
             // 
-            // label2
+            // lblUser
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Corbel", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(311, 595);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 29);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Abandoned?";
+            this.lblUser.AutoSize = true;
+            this.lblUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblUser.Font = new System.Drawing.Font("Corbel", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblUser.Location = new System.Drawing.Point(105, 90);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(194, 73);
+            this.lblUser.TabIndex = 4;
+            this.lblUser.Text = "NAME";
             // 
-            // checkBox1
+            // pictureBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(110, 560);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(98, 21);
-            this.checkBox1.TabIndex = 22;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(888, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(267, 269);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(1937, 1081);
+            this.ClientSize = new System.Drawing.Size(1942, 1081);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.lblClose);
@@ -604,7 +633,7 @@ namespace CarPark
             this.Controls.Add(this.gpbInput);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -618,6 +647,7 @@ namespace CarPark
             ((System.ComponentModel.ISupportInitialize)(this.lblClose)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -650,12 +680,14 @@ namespace CarPark
         private System.Windows.Forms.Timer timer;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblUserType;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
