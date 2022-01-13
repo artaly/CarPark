@@ -84,6 +84,7 @@ namespace CarPark
 
         private void btnTimeIn_Click(object sender, EventArgs e)
         {
+            btnAbandon.Enabled = true;
             int available;
             using (var con = new SqlConnection(UserSQL.ConString))
             {
@@ -407,7 +408,7 @@ namespace CarPark
         {
             tbxTimeIn.Text = DateTime.Now.ToString("h:mm:ss tt");
             tbxTimeOut.Text = DateTime.Now.ToString("h:mm:ss tt");
-
+            btnAbandon.Enabled = false;
 
             lblUserType.Text = Login.GetUserAccountType.ToString();
             lblUser.Text = Login.GetUserAccountName.ToString();

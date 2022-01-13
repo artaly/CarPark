@@ -32,7 +32,7 @@ namespace CarPark
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.gpbInput = new System.Windows.Forms.GroupBox();
             this.cbxType = new System.Windows.Forms.ComboBox();
@@ -66,6 +66,7 @@ namespace CarPark
             this.lblUserType = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAbandon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.gpbInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgData)).BeginInit();
             this.gbpSlots.SuspendLayout();
@@ -76,6 +77,7 @@ namespace CarPark
             // 
             // gpbInput
             // 
+            this.gpbInput.Controls.Add(this.btnAbandon);
             this.gpbInput.Controls.Add(this.cbxType);
             this.gpbInput.Controls.Add(this.label1);
             this.gpbInput.Controls.Add(this.tbxTimeOut);
@@ -322,14 +324,14 @@ namespace CarPark
             this.dtgData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgData.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dtgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgData.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgData.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgData.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgData.Location = new System.Drawing.Point(37, 306);
             this.dtgData.Margin = new System.Windows.Forms.Padding(4);
@@ -588,6 +590,41 @@ namespace CarPark
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+            // btnAbandon
+            // 
+            this.btnAbandon.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(125)))), ((int)(((byte)(89)))));
+            this.btnAbandon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(117)))), ((int)(((byte)(110)))));
+            this.btnAbandon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAbandon.BorderRadius = 4;
+            this.btnAbandon.ButtonText = "ABANDONED?";
+            this.btnAbandon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbandon.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAbandon.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAbandon.Iconimage = null;
+            this.btnAbandon.Iconimage_right = null;
+            this.btnAbandon.Iconimage_right_Selected = null;
+            this.btnAbandon.Iconimage_Selected = null;
+            this.btnAbandon.IconMarginLeft = 0;
+            this.btnAbandon.IconMarginRight = 0;
+            this.btnAbandon.IconRightVisible = true;
+            this.btnAbandon.IconRightZoom = 0D;
+            this.btnAbandon.IconVisible = true;
+            this.btnAbandon.IconZoom = 90D;
+            this.btnAbandon.IsTab = false;
+            this.btnAbandon.Location = new System.Drawing.Point(297, 594);
+            this.btnAbandon.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAbandon.Name = "btnAbandon";
+            this.btnAbandon.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(117)))), ((int)(((byte)(110)))));
+            this.btnAbandon.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(125)))), ((int)(((byte)(89)))));
+            this.btnAbandon.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnAbandon.selected = false;
+            this.btnAbandon.Size = new System.Drawing.Size(169, 38);
+            this.btnAbandon.TabIndex = 21;
+            this.btnAbandon.Text = "ABANDONED?";
+            this.btnAbandon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAbandon.Textcolor = System.Drawing.Color.White;
+            this.btnAbandon.TextFont = new System.Drawing.Font("Open Sans SemiBold", 10F, System.Drawing.FontStyle.Bold);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -659,6 +696,7 @@ namespace CarPark
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Bunifu.Framework.UI.BunifuFlatButton btnAbandon;
     }
 }
 
