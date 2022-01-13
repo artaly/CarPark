@@ -30,7 +30,8 @@ namespace CarPark
         public static string QuerySelect;
         public static string QueryUpdate;
         public static string QueryDelete;
-        public static int rate = 25;
+        public static int standardRate = 25;
+        //public static int rate = 25;
         public static int available;
         public static int occupied;
         int numVehicles = 0;
@@ -151,7 +152,7 @@ namespace CarPark
 
                             String timeIn = time.ToString("h:mm:ss tt");
 
-                            QueryInsert = "INSERT INTO car_transactions(brand, color, license_name, time_in, time_out, total_hours, date, amountpay) VALUES('" + tbxBrand.Text + "', '" + tbxColor.Text + "', '" + tbxLicense.Text + "', '" + timeIn + "', '" + null + "', '" + null + "', '" + txtDisplayDate + "', '" + null + "')";
+                            QueryInsert = "INSERT INTO car_transactions(brand, color, license_name, ctype_id, time_in, time_out, total_hours, date, amountpay) VALUES('" + tbxBrand.Text + "', '" + tbxColor.Text + "', '" + tbxLicense.Text + "'," + cbxType.SelectedValue + ",'" + timeIn + "', '" + null + "', '" + null + "', '" + txtDisplayDate + "', '" + null + "')";
 
                             con.Open();
                             cmd = new SqlCommand(QueryInsert, con);
@@ -296,7 +297,7 @@ namespace CarPark
 
                     if (hours > 0)
                     {
-                        float amountToPay = hours * rate;
+                        float amountToPay = hours * standardRate;
                         QueryUpdate = "UPDATE car_transactions SET amountpay ='" + amountToPay + "', total_hours='" + hours + "' WHERE license_name='" + tbxLicense.Text + "'";
                         cmd = new SqlCommand(QueryUpdate, con);
                         
