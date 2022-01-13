@@ -35,8 +35,6 @@ namespace CarPark
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.gpbInput = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxTimeOut = new System.Windows.Forms.TextBox();
@@ -64,9 +62,9 @@ namespace CarPark
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblUser = new System.Windows.Forms.Label();
             this.lblUserType = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblUser = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpbInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgData)).BeginInit();
@@ -78,8 +76,6 @@ namespace CarPark
             // 
             // gpbInput
             // 
-            this.gpbInput.Controls.Add(this.label2);
-            this.gpbInput.Controls.Add(this.checkBox1);
             this.gpbInput.Controls.Add(this.comboBox1);
             this.gpbInput.Controls.Add(this.label1);
             this.gpbInput.Controls.Add(this.tbxTimeOut);
@@ -101,29 +97,6 @@ namespace CarPark
             this.gpbInput.Size = new System.Drawing.Size(509, 665);
             this.gpbInput.TabIndex = 0;
             this.gpbInput.TabStop = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(301, 603);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(98, 21);
-            this.checkBox1.TabIndex = 22;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Corbel", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(333, 595);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 29);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Abandoned?";
             // 
             // comboBox1
             // 
@@ -565,6 +538,19 @@ namespace CarPark
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblUser.Font = new System.Drawing.Font("Corbel", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblUser.Location = new System.Drawing.Point(105, 90);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(194, 73);
+            this.lblUser.TabIndex = 4;
+            this.lblUser.Text = "NAME";
+            // 
             // lblUserType
             // 
             this.lblUserType.AutoSize = true;
@@ -591,19 +577,6 @@ namespace CarPark
             this.label5.Size = new System.Drawing.Size(179, 40);
             this.label5.TabIndex = 1;
             this.label5.Text = "USERTYPE:";
-            // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblUser.Font = new System.Drawing.Font("Corbel", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUser.Location = new System.Drawing.Point(105, 90);
-            this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(194, 73);
-            this.lblUser.TabIndex = 4;
-            this.lblUser.Text = "NAME";
             // 
             // pictureBox1
             // 
@@ -684,8 +657,6 @@ namespace CarPark
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
