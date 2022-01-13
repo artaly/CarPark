@@ -430,5 +430,10 @@ namespace CarPark
         {
 
         }
+
+        private void btnAbandon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
