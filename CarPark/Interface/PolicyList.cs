@@ -38,7 +38,7 @@ namespace CarPark.Interface
             dtpFromDate.CustomFormat = "M/d/yyyy";
             dtpToDate.CustomFormat = "M/d/yyyy";
             con.Open();
-            QuerySelect = "SELECT date as 'Date', license_name AS 'PLATE NUMBER', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT PAID' FROM policy_list WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "' ORDER BY date ASC";
+            QuerySelect = "SELECT  id as 'ID', date as 'Date', license_name AS 'PLATE NUMBER', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT PAID' FROM policy_list WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "' ORDER BY date ASC";
             cmd = new SqlCommand(QuerySelect, con);
 
             adapter = new SqlDataAdapter(cmd);
@@ -49,6 +49,7 @@ namespace CarPark.Interface
 
             dgtTransactionDetails.DataSource = dt;
             dgtTransactionDetails.Refresh();
+            dgtTransactionDetails.Columns[0].Visible = false;
 
             cmd = con.CreateCommand();
             con.Open();
@@ -62,7 +63,7 @@ namespace CarPark.Interface
                 lblTotal.Text = "PHP " + result.ToString();
             } catch
             {
-                MessageBox.Show("No transaction!");
+                MessageBox.Show("No transaction left!");
             }
             con.Close();
 
@@ -91,9 +92,9 @@ namespace CarPark.Interface
 
         private void PolicyList_Load(object sender, EventArgs e)
         {
-            QuerySelect = "SELECT date as 'Date', license_name AS 'PLATE NUMBER', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT UNPAID' FROM policy_list ORDER BY date ASC";
+            QuerySelect = "SELECT id as 'ID', date as 'Date', license_name AS 'PLATE NUMBER', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT UNPAID' FROM policy_list ORDER BY date ASC";
             cmd = new SqlCommand(QuerySelect, con);
-
+            
             adapter = new SqlDataAdapter(cmd);
             con.Close();
 
@@ -102,12 +103,13 @@ namespace CarPark.Interface
 
             dgtTransactionDetails.DataSource = dt;
             dgtTransactionDetails.Refresh();
+            dgtTransactionDetails.Columns[0].Visible = false;
         }
 
         private void btnTransfer_Click(object sender, EventArgs e)
         {
 
-            QueryInsert = "INSERT INTO transaction_history(date, license_name, total_hours, amountpay) SELECT date, license_name, total_hours, amountpay FROM policy_list WHERE license_name = '" + tbxLicense.Text + "'";
+            QueryInsert = "INSERT INTO transaction_history(date, license_name, total_hours, amountpay) SELECT date, license_name, total_hours, amountpay FROM policy_list WHERE id = '" + lblNo.Text + "'";
 
             con.Open();
             cmd = new SqlCommand(QueryInsert, con);
@@ -116,12 +118,21 @@ namespace CarPark.Interface
 
             MessageBox.Show("Car moved to sales report!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            QueryDelete = "DELETE FROM car_transactions WHERE brand = '" + tbxBrand.Text + "'";
+            QueryDelete = "DELETE FROM policy_list WHERE id = '" + lblNo.Text + "'";
             con.Open();
             cmd = new SqlCommand(QueryDelete, con);
             cmd.ExecuteNonQuery();
             con.Close();
             DataLoader();
+        }
+
+        private void dgtTransactionDetails_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                DataGridViewRow Row = dgtTransactionDetails.Rows[e.RowIndex];
+                lblNo.Text = Row.Cells["ID"].Value.ToString();
+            }
         }
     }
 }
