@@ -176,8 +176,6 @@ namespace CarPark
 
                             String timeIn = time.ToString("h:mm:ss tt");
 
-                            lblAvailable.Text = cbxType.SelectedValue.ToString();
-
                             QueryInsert = "INSERT INTO car_transactions(brand, color, license_name, ctype_id, time_in, time_out, total_hours, date, amountpay) VALUES('" + tbxBrand.Text + "', '" + tbxColor.Text + "', '" + tbxLicense.Text + "','" + cbxType.SelectedValue + "','" + timeIn + "', '" + null + "', '" + null + "', '" + txtDisplayDate + "', '" + null + "')";
 
                             con.Open();
@@ -223,32 +221,6 @@ namespace CarPark
             dtgData.Refresh();
 
             con.Close();
-        }
-
-        private void dtgData_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex > -1)
-            {
-                DataGridViewRow Row = dtgData.Rows[e.RowIndex];
-
-                tbxTimeIn.Text = Row.Cells["Time in"].Value.ToString();
-                tbxTimeOut.Text = Row.Cells["Time out"].Value.ToString();
-                tbxLicense.Text = Row.Cells["License Plate"].Value.ToString();
-                tbxBrand.Text = Row.Cells["Brand"].Value.ToString();
-                tbxColor.Text = Row.Cells["Color"].Value.ToString();
-               
-                /// Prevent error when selecting rows with empty/null cells
-                if (Row.Cells["Time out"].Value.ToString() != null)
-                {
-
-                    tbxTimeOut.Text = Row.Cells["Time out"].Value.ToString();
-                }
-                else
-                {
-                    lblTimeout.Text = null;
-                }
-
-            }
         }
 
 
@@ -460,5 +432,31 @@ namespace CarPark
         {
 
         }
+
+       private void dtgData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+           {
+               DataGridViewRow Row = dtgData.Rows[e.RowIndex];
+
+               tbxTimeIn.Text = Row.Cells["Time in"].Value.ToString();
+               tbxTimeOut.Text = Row.Cells["Time out"].Value.ToString();
+               tbxLicense.Text = Row.Cells["License Plate"].Value.ToString();
+               tbxBrand.Text = Row.Cells["Brand"].Value.ToString();
+               tbxColor.Text = Row.Cells["Color"].Value.ToString();
+
+               /// Prevent error when selecting rows with empty/null cells
+               if (Row.Cells["Time out"].Value.ToString() != null)
+               {
+
+                   tbxTimeOut.Text = Row.Cells["Time out"].Value.ToString();
+               }
+               else
+               {
+                   lblTimeout.Text = null;
+               }
+
+           }
+        }
     }
-}
+    }

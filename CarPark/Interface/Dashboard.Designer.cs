@@ -32,7 +32,6 @@ namespace CarPark
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.gpbInput = new System.Windows.Forms.GroupBox();
             this.btnAbandon = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -51,7 +50,6 @@ namespace CarPark
             this.lblLicense = new System.Windows.Forms.Label();
             this.tbxLicense = new System.Windows.Forms.TextBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.dtgData = new System.Windows.Forms.DataGridView();
             this.lblOccupied = new System.Windows.Forms.Label();
             this.lblAvailable = new System.Windows.Forms.Label();
             this.lblAvailableSlot = new System.Windows.Forms.Label();
@@ -67,12 +65,13 @@ namespace CarPark
             this.lblUserType = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dtgData = new System.Windows.Forms.DataGridView();
             this.gpbInput.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgData)).BeginInit();
             this.gbpSlots.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lblClose)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgData)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbInput
@@ -352,28 +351,6 @@ namespace CarPark
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 1;
             // 
-            // dtgData
-            // 
-            this.dtgData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgData.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dtgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgData.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgData.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtgData.Location = new System.Drawing.Point(37, 306);
-            this.dtgData.Margin = new System.Windows.Forms.Padding(4);
-            this.dtgData.Name = "dtgData";
-            this.dtgData.RowHeadersWidth = 51;
-            this.dtgData.Size = new System.Drawing.Size(1277, 658);
-            this.dtgData.TabIndex = 2;
-            this.dtgData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgData_CellClick);
-            // 
             // lblOccupied
             // 
             this.lblOccupied.AutoSize = true;
@@ -623,12 +600,30 @@ namespace CarPark
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+            // dtgData
+            // 
+            this.dtgData.AllowUserToAddRows = false;
+            this.dtgData.AllowUserToDeleteRows = false;
+            this.dtgData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgData.BackgroundColor = System.Drawing.Color.GhostWhite;
+            this.dtgData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgData.Location = new System.Drawing.Point(37, 314);
+            this.dtgData.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgData.Name = "dtgData";
+            this.dtgData.ReadOnly = true;
+            this.dtgData.RowHeadersWidth = 51;
+            this.dtgData.Size = new System.Drawing.Size(1318, 657);
+            this.dtgData.TabIndex = 35;
+            this.dtgData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgData_CellClick);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1942, 1081);
+            this.Controls.Add(this.dtgData);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bunifuFlatButton1);
@@ -636,7 +631,6 @@ namespace CarPark
             this.Controls.Add(this.btnSales);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.gbpSlots);
-            this.Controls.Add(this.dtgData);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.gpbInput);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
@@ -649,13 +643,13 @@ namespace CarPark
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.gpbInput.ResumeLayout(false);
             this.gpbInput.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgData)).EndInit();
             this.gbpSlots.ResumeLayout(false);
             this.gbpSlots.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lblClose)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -670,7 +664,6 @@ namespace CarPark
         private System.Windows.Forms.TextBox tbxBrand;
         private System.Windows.Forms.Label lblLicense;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.DataGridView dtgData;
         private System.Windows.Forms.Label lblTimeout;
         private System.Windows.Forms.Label lblTimeIn;
         private System.Windows.Forms.Label lblOccupied;
@@ -695,6 +688,7 @@ namespace CarPark
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuFlatButton btnAbandon;
+        private System.Windows.Forms.DataGridView dtgData;
     }
 }
 
