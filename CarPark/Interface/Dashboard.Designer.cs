@@ -102,8 +102,8 @@ namespace CarPark
             // 
             // btnAbandon
             // 
-            this.btnAbandon.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(125)))), ((int)(((byte)(89)))));
-            this.btnAbandon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(117)))), ((int)(((byte)(110)))));
+            this.btnAbandon.Activecolor = System.Drawing.Color.Goldenrod;
+            this.btnAbandon.BackColor = System.Drawing.Color.Goldenrod;
             this.btnAbandon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAbandon.BorderRadius = 4;
             this.btnAbandon.ButtonText = "ABANDONED?";
@@ -124,8 +124,8 @@ namespace CarPark
             this.btnAbandon.Location = new System.Drawing.Point(297, 594);
             this.btnAbandon.Margin = new System.Windows.Forms.Padding(5);
             this.btnAbandon.Name = "btnAbandon";
-            this.btnAbandon.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(117)))), ((int)(((byte)(110)))));
-            this.btnAbandon.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(125)))), ((int)(((byte)(89)))));
+            this.btnAbandon.Normalcolor = System.Drawing.Color.Goldenrod;
+            this.btnAbandon.OnHovercolor = System.Drawing.Color.Khaki;
             this.btnAbandon.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAbandon.selected = false;
             this.btnAbandon.Size = new System.Drawing.Size(169, 38);
