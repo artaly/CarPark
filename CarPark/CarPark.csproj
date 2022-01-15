@@ -144,5 +144,8 @@
     <Content Include="Resources\close.png" />
     <Content Include="Resources\logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Invoice\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
