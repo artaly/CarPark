@@ -52,6 +52,22 @@ namespace CarPark
             btnAbandon.Enabled = false;
             timer.Enabled = true;
 
+            int car_type;
+
+            using (var con = new SqlConnection(UserSQL.ConString))
+            {
+                var sql = "SELECT ctype_id FROM car_transactions";
+                using (var cmd = new SqlCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@license_name", tbxLicense.Text);
+                    con.Open();
+                    car_type = (int)cmd.ExecuteScalar();
+
+                }
+            }
+
+            
+
             int available;
             using (var con = new SqlConnection(UserSQL.ConString))
             {
@@ -208,7 +224,7 @@ namespace CarPark
         {
             con.Close();
             con.Open();
-            QuerySelect = "SELECT date AS 'Date',  license_name AS 'License Plate', brand AS 'Brand', color AS 'Color', time_in AS 'Time in', time_out AS 'Time out' FROM car_transactions ORDER BY id DESC";
+            QuerySelect = "SELECT date AS 'Date',  license_name AS 'License Plate', brand AS 'Brand', color AS 'Color', ctype_id as 'Type', time_in AS 'Time in', time_out AS 'Time out' FROM car_transactions ORDER BY id DESC";
             cmd = new SqlCommand(QuerySelect, con);
 
             adapter = new SqlDataAdapter(cmd);
@@ -291,13 +307,35 @@ namespace CarPark
 
                     int hours = (int)Convert.ToDateTime(timeOut).Subtract(Convert.ToDateTime(timeInt)).TotalHours;
 
+                    int car_type;
+
+                    using (var con = new SqlConnection(UserSQL.ConString))
+                    {
+                        var sql = "SELECT ctype_id FROM car_transactions WHERE license_name='" + tbxLicense.Text + "'";
+                        using (var cmd = new SqlCommand(sql, con))
+                        {
+                            cmd.Parameters.AddWithValue("@license_name", tbxLicense.Text);
+                            con.Open();
+                            car_type = (int)cmd.ExecuteScalar();
+
+                        }
+                    }
+
                     if (hours > 0)
                     {
-                        float amountToPay = hours * standardRate;
-                        QueryUpdate = "UPDATE car_transactions SET amountpay ='" + amountToPay + "', total_hours='" + hours + "' WHERE license_name='" + tbxLicense.Text + "'";
-                        cmd = new SqlCommand(QueryUpdate, con);
-                        
-                        cmd.ExecuteNonQuery();
+                        if (car_type == 1)
+                        {
+                            float amountToPay = hours * standardRate;
+                            QueryUpdate = "UPDATE car_transactions SET amountpay ='" + amountToPay + "', total_hours='" + hours + "' WHERE license_name='" + tbxLicense.Text + "'";
+                            cmd = new SqlCommand(QueryUpdate, con);
+                            cmd.ExecuteNonQuery();
+                        } else if (car_type == 2)
+                        {
+                            float amountToPay = hours * luxuryRate;
+                            QueryUpdate = "UPDATE car_transactions SET amountpay ='" + amountToPay + "', total_hours='" + hours + "' WHERE license_name='" + tbxLicense.Text + "'";
+                            cmd = new SqlCommand(QueryUpdate, con);
+                            cmd.ExecuteNonQuery();
+                        }   
                     }
                     else
                     {
@@ -305,7 +343,6 @@ namespace CarPark
                         QueryUpdate = "UPDATE car_transactions SET amountpay ='" + amountToPay + "', total_hours='" + hours + "' WHERE license_name='" + tbxLicense.Text + "'";
                         cmd = new SqlCommand(QueryUpdate, con);
                         cmd.ExecuteNonQuery();
-                        
                     }
                     con.Close();
 
@@ -555,9 +592,9 @@ namespace CarPark
                tbxLicense.Text = Row.Cells["License Plate"].Value.ToString();
                tbxBrand.Text = Row.Cells["Brand"].Value.ToString();
                tbxColor.Text = Row.Cells["Color"].Value.ToString();
-
-               /// Prevent error when selecting rows with empty/null cells
-               if (Row.Cells["Time out"].Value.ToString() != null)
+                
+                /// Prevent error when selecting rows with empty/null cells
+                if (Row.Cells["Time out"].Value.ToString() != null)
                {
 
                    tbxTimeOut.Text = Row.Cells["Time out"].Value.ToString();
