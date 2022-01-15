@@ -47,8 +47,8 @@ namespace CarPark
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            btnAbandon.Enabled = false;
             DataLoader();
+            btnAbandon.Enabled = false;
             timer.Enabled = true;
 
             int available;
@@ -105,7 +105,6 @@ namespace CarPark
 
         private void btnTimeIn_Click(object sender, EventArgs e)
         {
-            btnAbandon.Enabled = true;
             int available;
             using (var con = new SqlConnection(UserSQL.ConString))
             {
@@ -403,7 +402,7 @@ namespace CarPark
         {
             tbxTimeIn.Text = DateTime.Now.ToString("h:mm:ss tt");
             tbxTimeOut.Text = DateTime.Now.ToString("h:mm:ss tt");
-            btnAbandon.Enabled = false;
+            
 
             lblUserType.Text = Login.GetUserAccountType.ToString();
             lblUser.Text = Login.GetUserAccountName.ToString();
@@ -428,7 +427,7 @@ namespace CarPark
 
         private void btnAbandon_Click(object sender, EventArgs e)
         {
-
+           
         }
 
        private void dtgData_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -436,8 +435,8 @@ namespace CarPark
             if (e.RowIndex > -1)
            {
                DataGridViewRow Row = dtgData.Rows[e.RowIndex];
-
-               tbxTimeIn.Text = Row.Cells["Time in"].Value.ToString();
+                btnAbandon.Enabled = true;
+                tbxTimeIn.Text = Row.Cells["Time in"].Value.ToString();
                tbxTimeOut.Text = Row.Cells["Time out"].Value.ToString();
                tbxLicense.Text = Row.Cells["License Plate"].Value.ToString();
                tbxBrand.Text = Row.Cells["Brand"].Value.ToString();
