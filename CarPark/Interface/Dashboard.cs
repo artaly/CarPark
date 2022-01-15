@@ -47,6 +47,7 @@ namespace CarPark
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            btnAbandon.Enabled = false;
             DataLoader();
             timer.Enabled = true;
 
@@ -102,12 +103,9 @@ namespace CarPark
             }
         }
 
-       
-
         private void btnTimeIn_Click(object sender, EventArgs e)
         {
             btnAbandon.Enabled = true;
-
             int available;
             using (var con = new SqlConnection(UserSQL.ConString))
             {

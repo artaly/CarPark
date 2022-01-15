@@ -33,6 +33,7 @@ namespace CarPark
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpbInput = new System.Windows.Forms.GroupBox();
             this.btnAbandon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.cbxType = new System.Windows.Forms.ComboBox();
@@ -605,7 +606,6 @@ namespace CarPark
             this.dtgData.AllowUserToAddRows = false;
             this.dtgData.AllowUserToDeleteRows = false;
             this.dtgData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgData.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dtgData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgData.Location = new System.Drawing.Point(37, 314);
@@ -613,6 +613,9 @@ namespace CarPark
             this.dtgData.Name = "dtgData";
             this.dtgData.ReadOnly = true;
             this.dtgData.RowHeadersWidth = 51;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.dtgData.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgData.Size = new System.Drawing.Size(1318, 657);
             this.dtgData.TabIndex = 35;
             this.dtgData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgData_CellClick);

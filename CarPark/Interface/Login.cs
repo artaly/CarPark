@@ -61,11 +61,6 @@ namespace CarPark.Interface
                     
                 }
             }
-           
-
-            
-
-
                 if (String.IsNullOrEmpty(returnValue))
             {
                 MessageBox.Show("Fill up the fields!");
