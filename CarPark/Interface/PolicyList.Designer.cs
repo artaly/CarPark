@@ -46,7 +46,7 @@ namespace CarPark.Interface
             this.lblForTotal = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblClose = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTransfer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnExcel)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgtTransactionDetails)).BeginInit();
@@ -265,23 +265,24 @@ namespace CarPark.Interface
             this.lblClose.TabStop = false;
             this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
             // 
-            // button1
+            // btnTransfer
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(50)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(50)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(159)))), ((int)(((byte)(58)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(843, 578);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 33);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Transfer to Sales";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(50)))));
+            this.btnTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTransfer.FlatAppearance.BorderSize = 0;
+            this.btnTransfer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(50)))));
+            this.btnTransfer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(159)))), ((int)(((byte)(58)))));
+            this.btnTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTransfer.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransfer.ForeColor = System.Drawing.Color.White;
+            this.btnTransfer.Location = new System.Drawing.Point(843, 578);
+            this.btnTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTransfer.Name = "btnTransfer";
+            this.btnTransfer.Size = new System.Drawing.Size(161, 33);
+            this.btnTransfer.TabIndex = 38;
+            this.btnTransfer.Text = "Transfer to Sales";
+            this.btnTransfer.UseVisualStyleBackColor = false;
+            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
             // 
             // PolicyList
             // 
@@ -289,7 +290,7 @@ namespace CarPark.Interface
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1161, 638);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnTransfer);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblForTotal);
             this.Controls.Add(this.btnReturn);
@@ -309,6 +310,7 @@ namespace CarPark.Interface
             this.Name = "PolicyList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TransactionSales";
+            this.Load += new System.EventHandler(this.PolicyList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnExcel)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgtTransactionDetails)).EndInit();
@@ -336,6 +338,6 @@ namespace CarPark.Interface
         private System.Windows.Forms.Label lblForTotal;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.PictureBox lblClose;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTransfer;
     }
 }

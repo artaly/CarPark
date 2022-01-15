@@ -20,6 +20,9 @@ namespace CarPark.Interface
         public static SqlDataAdapter adapter;
         public static DataTable dt = new DataTable();
         public static string QuerySelect;
+        public static string QueryInsert;
+        public static string QueryUpdate;
+        public static string QueryDelete;
 
         public PolicyList()
         {
@@ -84,6 +87,41 @@ namespace CarPark.Interface
         private void btnExcel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PolicyList_Load(object sender, EventArgs e)
+        {
+            QuerySelect = "SELECT date as 'Date', license_name AS 'PLATE NUMBER', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT UNPAID' FROM policy_list ORDER BY date ASC";
+            cmd = new SqlCommand(QuerySelect, con);
+
+            adapter = new SqlDataAdapter(cmd);
+            con.Close();
+
+            dt = new DataTable();
+            adapter.Fill(dt);
+
+            dgtTransactionDetails.DataSource = dt;
+            dgtTransactionDetails.Refresh();
+        }
+
+        private void btnTransfer_Click(object sender, EventArgs e)
+        {
+
+            QueryInsert = "INSERT INTO transaction_history(date, license_name, total_hours, amountpay) SELECT date, license_name, total_hours, amountpay FROM policy_list WHERE license_name = '" + tbxLicense.Text + "'";
+
+            con.Open();
+            cmd = new SqlCommand(QueryInsert, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            MessageBox.Show("Car moved to sales report!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            QueryDelete = "DELETE FROM car_transactions WHERE brand = '" + tbxBrand.Text + "'";
+            con.Open();
+            cmd = new SqlCommand(QueryDelete, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            DataLoader();
         }
     }
 }
