@@ -79,6 +79,27 @@ namespace CarPark
 
             lblAvailableSlot.Text = available.ToString();
             lblOccupiedSlot.Text = occupied.ToString();
+
+            using (var con = new SqlConnection(UserSQL.ConString))
+            {
+                try
+                {
+                    string query = "select car_type, ctype_id from car_types";
+                    SqlDataAdapter da = new SqlDataAdapter(query, con);
+                    con.Open();
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "car_types");
+                    cbxType.DisplayMember = "car_type";
+                    cbxType.ValueMember = "ctype_id";
+                    cbxType.DataSource = ds.Tables["car_types"];
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    // write exception info to log or anything else
+                    MessageBox.Show("Error occured!");
+                }
+            }
         }
 
        
