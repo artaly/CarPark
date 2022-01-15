@@ -35,7 +35,7 @@ namespace CarPark.Interface
             dtpFromDate.CustomFormat = "M/d/yyyy";
             dtpToDate.CustomFormat = "M/d/yyyy";
             con.Open();
-            QuerySelect = "SELECT date as 'Date', license_name AS 'PLATE NUMBER', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT PAID' FROM transaction_history WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "' ORDER BY date ASC";
+            QuerySelect = "SELECT date as 'Date', license_name AS 'PLATE NUMBER', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT PAID' FROM policy_list WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "' ORDER BY date ASC";
             cmd = new SqlCommand(QuerySelect, con);
 
             adapter = new SqlDataAdapter(cmd);
@@ -49,7 +49,7 @@ namespace CarPark.Interface
 
             cmd = con.CreateCommand();
             con.Open();
-            cmd.CommandText = "SELECT SUM(amountpay) FROM transaction_history WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "'";
+            cmd.CommandText = "SELECT SUM(amountpay) FROM policy_list WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "'";
 
             try
             {
