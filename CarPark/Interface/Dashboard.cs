@@ -31,6 +31,7 @@ namespace CarPark
         public static string QueryUpdate;
         public static string QueryDelete;
         public static int standardRate = 25;
+        public static int luxuryRate = 50;
         //public static int rate = 25;
         public static int available;
         public static int occupied;
@@ -427,28 +428,120 @@ namespace CarPark
 
         private void btnAbandon_Click(object sender, EventArgs e)
         {
-            QueryInsert = "INSERT INTO policy_list(date, license_name, total_hours, amountpay) SELECT date, license_name, total_hours, amountpay FROM car_transactions WHERE license_name = '" + tbxLicense.Text + "'";
+            int available;
+            using (var con = new SqlConnection(UserSQL.ConString))
+            {
+                var sql = "SELECT available_slots FROM car_slots";
+                using (var cmd = new SqlCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@license_name", tbxLicense.Text);
+                    con.Open();
+                    available = (int)cmd.ExecuteScalar();
 
-            con.Open();
-            cmd = new SqlCommand(QueryInsert, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
+                }
+            }
 
-            MessageBox.Show("Car moved to policy list!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            int occupied;
 
-            QueryDelete = "DELETE FROM car_transactions WHERE brand = '" + tbxBrand.Text + "'";
-            con.Open();
-            cmd = new SqlCommand(QueryDelete, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
+            using (var con = new SqlConnection(UserSQL.ConString))
+            {
+                var sql = "SELECT occupied_slots FROM car_slots";
+                using (var cmd = new SqlCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@license_name", tbxLicense.Text);
+                    con.Open();
+                    occupied = (int)cmd.ExecuteScalar();
 
-            QueryUpdate = "UPDATE car_slots SET available_slots='" + available + "', occupied_slots='" + occupied + "'";
-            con.Open();
-            cmd = new SqlCommand(QueryUpdate, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-            ClearAll();
-            DataLoader();
+                }
+            }
+
+            if (dtgData.Rows.Count > 0)
+            {
+                if (occupied > 0)
+                {
+                    available = available + 1;
+                    occupied = occupied - 1;
+
+                    lblAvailableSlot.Text = available.ToString();
+                    lblOccupiedSlot.Text = occupied.ToString();
+
+                    numVehicles = numVehicles + 1;
+
+                    con.Close();
+                    con.Open();
+                    DateTime date = DateTime.Now;
+                    var time = DateTime.Now;
+
+                    String timeOut = time.ToString("h:mm:ss tt");
+
+                    QueryUpdate = "UPDATE car_transactions SET brand='" + tbxBrand.Text + "', color='" + tbxColor.Text + "', time_out='" + timeOut + "' WHERE license_name='" + tbxLicense.Text + "'";
+                    cmd = new SqlCommand(QueryUpdate, con);
+                    cmd.ExecuteNonQuery();
+
+                    string timeInt;
+
+                    using (var con = new SqlConnection(UserSQL.ConString))
+                    {
+                        var sql = "SELECT time_in FROM car_transactions WHERE license_name = @license_name";
+                        using (var cmd = new SqlCommand(sql, con))
+                        {
+                            cmd.Parameters.AddWithValue("@license_name", tbxLicense.Text);
+                            con.Open();
+                            timeInt = (string)cmd.ExecuteScalar();
+
+                        }
+                    }
+
+
+                    int hours = (int)Convert.ToDateTime(timeOut).Subtract(Convert.ToDateTime(timeInt)).TotalHours;
+
+                    if (hours > 0)
+                    {
+                        float amountToPay = hours * standardRate;
+                        QueryUpdate = "UPDATE car_transactions SET amountpay ='" + amountToPay + "', total_hours='" + hours + "' WHERE license_name='" + tbxLicense.Text + "'";
+                        cmd = new SqlCommand(QueryUpdate, con);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    else
+                    {
+                        float amountToPay = 0;
+                        QueryUpdate = "UPDATE car_transactions SET amountpay ='" + amountToPay + "', total_hours='" + hours + "' WHERE license_name='" + tbxLicense.Text + "'";
+                        cmd = new SqlCommand(QueryUpdate, con);
+                        cmd.ExecuteNonQuery();
+
+                    }
+                    con.Close();
+
+                    QueryInsert = "INSERT INTO policy_list(date, license_name, total_hours, amountpay) SELECT date, license_name, total_hours, amountpay FROM car_transactions WHERE license_name = '" + tbxLicense.Text + "'";
+
+                    con.Open();
+                    cmd = new SqlCommand(QueryInsert, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    MessageBox.Show("Car moved to policy list!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    QueryDelete = "DELETE FROM car_transactions WHERE brand = '" + tbxBrand.Text + "'";
+                    con.Open();
+                    cmd = new SqlCommand(QueryDelete, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    QueryUpdate = "UPDATE car_slots SET available_slots='" + available + "', occupied_slots='" + occupied + "'";
+                    con.Open();
+                    cmd = new SqlCommand(QueryUpdate, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    ClearAll();
+                    DataLoader();
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("No entries currently available.", "Error");
+            }
         }
 
        private void dtgData_CellClick(object sender, DataGridViewCellEventArgs e)
