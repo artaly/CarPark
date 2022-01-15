@@ -169,16 +169,16 @@ namespace CarPark
                         }
                         else
                         {
-                           /* con.Close();
+                           con.Close();
                             DateTime date = DateTime.Now;
                             string txtDisplayDate = string.Format("{0:M/d/yyyy}", date);
                             var time = DateTime.Now;
 
                             String timeIn = time.ToString("h:mm:ss tt");
 
-                            lblAvailable.Text = (string)cbxType.SelectedValue;
+                            lblAvailable.Text = cbxType.SelectedValue.ToString();
 
-                            //QueryInsert = "INSERT INTO car_transactions(brand, color, license_name, ctype_id, time_in, time_out, total_hours, date, amountpay) VALUES('" + tbxBrand.Text + "', '" + tbxColor.Text + "', '" + tbxLicense.Text + "','" + cbxType.SelectedValue + "','" + timeIn + "', '" + null + "', '" + null + "', '" + txtDisplayDate + "', '" + null + "')";
+                            QueryInsert = "INSERT INTO car_transactions(brand, color, license_name, ctype_id, time_in, time_out, total_hours, date, amountpay) VALUES('" + tbxBrand.Text + "', '" + tbxColor.Text + "', '" + tbxLicense.Text + "','" + cbxType.SelectedValue + "','" + timeIn + "', '" + null + "', '" + null + "', '" + txtDisplayDate + "', '" + null + "')";
 
                             con.Open();
                             cmd = new SqlCommand(QueryInsert, con);
@@ -194,7 +194,7 @@ namespace CarPark
 
                             tbxBrand.Focus();
                             ClearAll();
-                            DataLoader();*/
+                            DataLoader();
                         }
                     }
                     catch (Exception ex)
