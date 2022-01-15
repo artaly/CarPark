@@ -427,7 +427,28 @@ namespace CarPark
 
         private void btnAbandon_Click(object sender, EventArgs e)
         {
-           
+            QueryInsert = "INSERT INTO policy_list(date, license_name, total_hours, amountpay) SELECT date, license_name, total_hours, amountpay FROM car_transactions WHERE license_name = '" + tbxLicense.Text + "'";
+
+            con.Open();
+            cmd = new SqlCommand(QueryInsert, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            MessageBox.Show("Car moved to policy list!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            QueryDelete = "DELETE FROM car_transactions WHERE brand = '" + tbxBrand.Text + "'";
+            con.Open();
+            cmd = new SqlCommand(QueryDelete, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            QueryUpdate = "UPDATE car_slots SET available_slots='" + available + "', occupied_slots='" + occupied + "'";
+            con.Open();
+            cmd = new SqlCommand(QueryUpdate, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            ClearAll();
+            DataLoader();
         }
 
        private void dtgData_CellClick(object sender, DataGridViewCellEventArgs e)
