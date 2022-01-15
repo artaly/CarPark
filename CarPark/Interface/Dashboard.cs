@@ -48,6 +48,15 @@ namespace CarPark
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            string type = Login.GetUserAccountType.ToString();
+
+            if (type == "Employee")
+            {
+                btnSales.Hide();
+                bunifuFlatButton1.Hide();
+            }
+
+
             DataLoader();
             btnAbandon.Enabled = false;
             timer.Enabled = true;

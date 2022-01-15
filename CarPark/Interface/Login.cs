@@ -69,7 +69,7 @@ namespace CarPark.Interface
             returnValue = returnValue.Trim();
             if (returnValue == "Admin")
             {
-                AdminDashboard adminDashboard = new AdminDashboard();
+                Dashboard adminDashboard = new Dashboard();
                 adminDashboard.Show();
                 this.Hide();
             }

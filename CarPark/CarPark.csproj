@@ -52,12 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\UserSQL.cs" />
-    <Compile Include="Interface\AdminDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interface\AdminDashboard.Designer.cs">
-      <DependentUpon>AdminDashboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interface\Receipt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,9 +90,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Interface\AdminDashboard.resx">
-      <DependentUpon>AdminDashboard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Interface\Receipt.resx">
       <DependentUpon>Receipt.cs</DependentUpon>
     </EmbeddedResource>
