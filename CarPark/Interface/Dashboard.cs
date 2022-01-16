@@ -54,6 +54,7 @@ namespace CarPark
             {
                 btnSales.Hide();
                 bunifuFlatButton1.Hide();
+                btnAbandon.Hide();
             }
 
 
