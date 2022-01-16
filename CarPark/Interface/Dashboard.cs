@@ -52,7 +52,6 @@ namespace CarPark
 
             if (type == "Employee")
             {
-                btnSales.Hide();
                 bunifuFlatButton1.Hide();
                 btnAbandon.Hide();
             }
