@@ -33,7 +33,7 @@ namespace CarPark
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpbInput = new System.Windows.Forms.GroupBox();
             this.btnAbandon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.cbxType = new System.Windows.Forms.ComboBox();
@@ -67,12 +67,14 @@ namespace CarPark
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dtgData = new System.Windows.Forms.DataGridView();
+            this.btnLogout = new System.Windows.Forms.PictureBox();
             this.gpbInput.SuspendLayout();
             this.gbpSlots.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lblClose)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbInput
@@ -92,7 +94,7 @@ namespace CarPark
             this.gpbInput.Controls.Add(this.tbxBrand);
             this.gpbInput.Controls.Add(this.lblLicense);
             this.gpbInput.Controls.Add(this.tbxLicense);
-            this.gpbInput.Location = new System.Drawing.Point(1363, 306);
+            this.gpbInput.Location = new System.Drawing.Point(1420, 306);
             this.gpbInput.Margin = new System.Windows.Forms.Padding(4);
             this.gpbInput.Name = "gpbInput";
             this.gpbInput.Padding = new System.Windows.Forms.Padding(4);
@@ -613,12 +615,23 @@ namespace CarPark
             this.dtgData.Name = "dtgData";
             this.dtgData.ReadOnly = true;
             this.dtgData.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.dtgData.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgData.Size = new System.Drawing.Size(1318, 657);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.dtgData.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgData.Size = new System.Drawing.Size(1366, 657);
             this.dtgData.TabIndex = 35;
             this.dtgData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgData_CellClick);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.Location = new System.Drawing.Point(1987, 996);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(38, 43);
+            this.btnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnLogout.TabIndex = 36;
+            this.btnLogout.TabStop = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // Dashboard
             // 
@@ -626,6 +639,7 @@ namespace CarPark
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1942, 1081);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.dtgData);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
@@ -653,6 +667,7 @@ namespace CarPark
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -692,6 +707,7 @@ namespace CarPark
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuFlatButton btnAbandon;
         private System.Windows.Forms.DataGridView dtgData;
+        private System.Windows.Forms.PictureBox btnLogout;
     }
 }
 
