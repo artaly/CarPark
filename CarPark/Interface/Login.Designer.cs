@@ -30,53 +30,17 @@ namespace CarPark.Interface
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.tbxUsername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.tbxPassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnLogin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblClose = new System.Windows.Forms.PictureBox();
             this.lblForgotPassword = new System.Windows.Forms.Label();
+            this.tbxUsername = new System.Windows.Forms.TextBox();
+            this.tbxPassword = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblClose)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tbxUsername
-            // 
-            this.tbxUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbxUsername.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxUsername.ForeColor = System.Drawing.Color.Black;
-            this.tbxUsername.HintForeColor = System.Drawing.Color.Black;
-            this.tbxUsername.HintText = "Username";
-            this.tbxUsername.isPassword = false;
-            this.tbxUsername.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(140)))), ((int)(((byte)(160)))));
-            this.tbxUsername.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(137)))), ((int)(((byte)(178)))));
-            this.tbxUsername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(211)))), ((int)(((byte)(241)))));
-            this.tbxUsername.LineThickness = 4;
-            this.tbxUsername.Location = new System.Drawing.Point(47, 295);
-            this.tbxUsername.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.tbxUsername.Name = "tbxUsername";
-            this.tbxUsername.Size = new System.Drawing.Size(401, 68);
-            this.tbxUsername.TabIndex = 3;
-            this.tbxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // tbxPassword
-            // 
-            this.tbxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbxPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPassword.ForeColor = System.Drawing.Color.Black;
-            this.tbxPassword.HintForeColor = System.Drawing.Color.Black;
-            this.tbxPassword.HintText = "Password";
-            this.tbxPassword.isPassword = true;
-            this.tbxPassword.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(140)))), ((int)(((byte)(160)))));
-            this.tbxPassword.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(137)))), ((int)(((byte)(178)))));
-            this.tbxPassword.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(211)))), ((int)(((byte)(241)))));
-            this.tbxPassword.LineThickness = 4;
-            this.tbxPassword.Location = new System.Drawing.Point(47, 393);
-            this.tbxPassword.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.tbxPassword.Name = "tbxPassword";
-            this.tbxPassword.Size = new System.Drawing.Size(401, 68);
-            this.tbxPassword.TabIndex = 4;
-            this.tbxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // btnLogin
             // 
@@ -140,12 +104,51 @@ namespace CarPark.Interface
             this.lblForgotPassword.AutoSize = true;
             this.lblForgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(140)))), ((int)(((byte)(160)))));
-            this.lblForgotPassword.Location = new System.Drawing.Point(43, 467);
+            this.lblForgotPassword.Location = new System.Drawing.Point(287, 448);
             this.lblForgotPassword.Name = "lblForgotPassword";
             this.lblForgotPassword.Size = new System.Drawing.Size(161, 24);
             this.lblForgotPassword.TabIndex = 10;
             this.lblForgotPassword.Text = "Forgot password?";
             this.lblForgotPassword.Click += new System.EventHandler(this.lblForgotPassword_Click);
+            // 
+            // tbxUsername
+            // 
+            this.tbxUsername.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.tbxUsername.Location = new System.Drawing.Point(47, 336);
+            this.tbxUsername.Name = "tbxUsername";
+            this.tbxUsername.Size = new System.Drawing.Size(401, 32);
+            this.tbxUsername.TabIndex = 11;
+            // 
+            // tbxPassword
+            // 
+            this.tbxPassword.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.tbxPassword.Location = new System.Drawing.Point(47, 413);
+            this.tbxPassword.Name = "tbxPassword";
+            this.tbxPassword.Size = new System.Drawing.Size(401, 32);
+            this.tbxPassword.TabIndex = 12;
+            this.tbxPassword.UseSystemPasswordChar = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
+            this.label1.Location = new System.Drawing.Point(42, 308);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 25);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Username";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
+            this.label2.Location = new System.Drawing.Point(42, 385);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 25);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Password";
             // 
             // Login
             // 
@@ -154,12 +157,14 @@ namespace CarPark.Interface
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(496, 667);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tbxPassword);
+            this.Controls.Add(this.tbxUsername);
             this.Controls.Add(this.lblForgotPassword);
             this.Controls.Add(this.lblClose);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.tbxPassword);
-            this.Controls.Add(this.tbxUsername);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
@@ -173,11 +178,13 @@ namespace CarPark.Interface
         }
 
         #endregion
-        private Bunifu.Framework.UI.BunifuMaterialTextbox tbxUsername;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox tbxPassword;
         private Bunifu.Framework.UI.BunifuFlatButton btnLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox lblClose;
         private System.Windows.Forms.Label lblForgotPassword;
+        private System.Windows.Forms.TextBox tbxUsername;
+        private System.Windows.Forms.TextBox tbxPassword;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
