@@ -33,59 +33,65 @@ namespace CarPark.Interface
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            QuerySelect = "SELECT * FROM employees WHERE username='" + tbxUsername.Text + "' AND password='" + tbxPassword.Text + "'";
-            con.Close();
-            con.Open();
-            cmd = new SqlCommand(QuerySelect, con);
-
-            reader = cmd.ExecuteReader();
-            if (reader.HasRows)
+            try
             {
-                reader.Read();
-                GetUserAccountType = reader["role"].ToString();
-                GetUserAccountName = reader["first_name"].ToString();
-            }
-            con.Close();
+                QuerySelect = "SELECT * FROM employees WHERE username='" + tbxUsername.Text + "' AND password='" + tbxPassword.Text + "'";
+                con.Close();
+                con.Open();
+                cmd = new SqlCommand(QuerySelect, con);
 
-            string query = "SELECT role from employees WHERE username=@username and password=@password";
-            string returnValue = "";
-            con.Open();
-            using (con)
-            {
-                using (cmd = new SqlCommand(query, con))
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
                 {
-                    cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = tbxUsername.Text;
-                    cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = tbxPassword.Text;
-                    
-                    returnValue = (string)cmd.ExecuteScalar();
-                    
+                    reader.Read();
+                    GetUserAccountType = reader["role"].ToString();
+                    GetUserAccountName = reader["first_name"].ToString();
                 }
-            }
+                con.Close();
+
+                string query = "SELECT role from employees WHERE username=@username and password=@password";
+                string returnValue = "";
+                con.Open();
+                using (con)
+                {
+                    using (cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = tbxUsername.Text;
+                        cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = tbxPassword.Text;
+
+                        returnValue = (string)cmd.ExecuteScalar();
+
+                    }
+                }
                 if (String.IsNullOrEmpty(returnValue))
+                {
+                    MessageBox.Show("Fill up the fields!");
+                    return;
+                }
+                returnValue = returnValue.Trim();
+                if (returnValue == "Admin")
+                {
+                    Dashboard adminDashboard = new Dashboard();
+                    adminDashboard.Show();
+                    this.Hide();
+                }
+                else if (returnValue == "Employee")
+                {
+                    Dashboard dashboard = new Dashboard();
+                    dashboard.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect username or password");
+                    tbxUsername.Text = "";
+                    tbxPassword.Text = "";
+                }
+                con.Close();
+            } catch (Exception b)
             {
-                MessageBox.Show("Fill up the fields!");
-                return;
+                MessageBox.Show("Invalid credentials!");
             }
-            returnValue = returnValue.Trim();
-            if (returnValue == "Admin")
-            {
-                Dashboard adminDashboard = new Dashboard();
-                adminDashboard.Show();
-                this.Hide();
-            }
-            else if (returnValue == "Employee")
-            {
-                Dashboard dashboard = new Dashboard();
-                dashboard.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Incorrect username or password");
-                tbxUsername.Text = "";
-                tbxPassword.Text = "";
-            }
-            con.Close();
         }
 
         private void lblClose_Click_1(object sender, EventArgs e)
@@ -97,5 +103,6 @@ namespace CarPark.Interface
         {
             MessageBox.Show("Please contact administrator");
         }
+            
     }
 }
