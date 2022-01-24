@@ -63,7 +63,7 @@ namespace CarPark
 
             int car_type;
 
-            /*using (var con = new SqlConnection(UserSQL.ConString))
+            using (var con = new SqlConnection(UserSQL.ConString))
             {
                 var sql = "SELECT ctype_id FROM car_transactions";
                 using (var cmd = new SqlCommand(sql, con))
@@ -73,9 +73,9 @@ namespace CarPark
                     car_type = (int)cmd.ExecuteScalar();
 
                 }
-            }*/
+            }
 
-         
+
             int available;
             using (var con = new SqlConnection(UserSQL.ConString))
             {
@@ -199,7 +199,7 @@ namespace CarPark
 
                             String timeIn = time.ToString("h:mm:ss tt");
 
-                            QueryInsert = "INSERT INTO car_transactions(brand, color, license_name, ctype_id, time_in, dateti, time_out, dateto, total_hours, date, amountpay) VALUES('" + tbxBrand.Text + "', '" + tbxColor.Text + "', '" + tbxLicense.Text + "', '" + timeIn + "', '" + txtDisplayDate + "', '" + null + "', '" + null + "', '" + null + "', '" + dateToday + "', '" + null + "')";
+                            QueryInsert = "INSERT INTO car_transactions(brand, color, license_name, ctype_id, time_in, dateti, time_out, dateto, total_hours, date, amountpay) VALUES('" + tbxBrand.Text + "', '" + tbxColor.Text + "', '" + tbxLicense.Text + "', '" + cbxType.SelectedValue + "', '" + timeIn + "', '" + txtDisplayDate + "', '" + null + "', '" + null + "', '" + null + "', '" + dateToday + "', '" + null + "')";
 
                             con.Open();
                             cmd = new SqlCommand(QueryInsert, con);
@@ -300,7 +300,7 @@ namespace CarPark
                     cmd = new SqlCommand(QueryUpdate, con);
                     cmd.ExecuteNonQuery();
 
-                    string timeInt;
+                    /*string timeInt;
 
                     using (var con = new SqlConnection(UserSQL.ConString))
                     {
@@ -313,9 +313,24 @@ namespace CarPark
 
                         }
                     }
+                    */
+
+                    int hours;
+
+                    using (var con = new SqlConnection(UserSQL.ConString))
+                    {
+                        var sql = "SELECT DATEDIFF(hour, dateti, dateto) FROM car_transactions WHERE license_name = @license_name";
+                        using (var cmd = new SqlCommand(sql, con))
+                        {
+                            cmd.Parameters.AddWithValue("@license_name", tbxLicense.Text);
+                            con.Open();
+                            hours = (int)cmd.ExecuteScalar();
+
+                        }
+                    }
 
 
-                    int hours = (int)Convert.ToDateTime(timeOut).Subtract(Convert.ToDateTime(timeInt)).TotalHours;
+                    //int hours = (int)Convert.ToDateTime(timeOut).Subtract(Convert.ToDateTime(timeInt)).TotalHours;
 
                     int car_type;
 
