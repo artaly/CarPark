@@ -11,74 +11,45 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using CarPark.Database;
 using CarPark.Interface;
+using Microsoft.Reporting.WinForms;
 
 namespace CarPark
 {
     public partial class Receipt : Form
     {
+
+        public static SqlConnection con = new SqlConnection(UserSQL.ConString);
+        public static SqlCommand cmd = new SqlCommand();
+        public static SqlDataReader reader;
+      //  public static SqlDataAdapter adapter;
+        public static DataTable dt = new DataTable();
+
         public Receipt()
         {
             InitializeComponent();
         }
 
-        
-        
 
-        
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
 
             this.reportViewer1.RefreshReport();
-        }
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT id, license_name, car_type, dateti, dateto, total_hours, amountpay FROM transaction_history ORDER BY id DESC", con);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "ForInvoice");
 
+            ReportDataSource dataSource = new ReportDataSource("DataSet_Invoice", ds.Tables[0]);
 
-        private void btnTimeIn_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        public void DataLoader()
-        {
-            
-        }
-
-        private void dtgData_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
-
-        private void btnTimeOut_Click(object sender, EventArgs e)
-        {
-            
+            this.reportViewer1.LocalReport.DataSources.Clear();
+            this.reportViewer1.LocalReport.DataSources.Add(dataSource);
+            this.reportViewer1.RefreshReport();
 
 
         }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
-        private void lblClose_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void timer_Tick(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnSales_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

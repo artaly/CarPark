@@ -113,6 +113,9 @@
     <Compile Include="Interface\TransactionSales.Designer.cs">
       <DependentUpon>TransactionSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoice\ForInvoice.cs">
+      <DependentUpon>ForInvoice.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Invoice\ForInvoice.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

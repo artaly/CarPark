@@ -1,16 +1,32 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
-<xs:schema id="ForInvoice" 
-                  targetNamespace="http://tempuri.org/ForInvoice.xsd"
-                  elementFormDefault="qualified"
-                  attributeFormDefault="qualified"
-                  xmlns="http://tempuri.org/ForInvoice.xsd"
-                  xmlns:mstns="http://tempuri.org/ForInvoice.xsd"
-                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
-                  xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
-    <xs:element name="ForInvoice" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true">
-        <xs:complexType>
-            <xs:choice minOccurs="0" maxOccurs="unbounded"></xs:choice>
-        </xs:complexType>
-    </xs:element>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ForInvoice" targetNamespace="http://tempuri.org/ForInvoice.xsd" xmlns:mstns="http://tempuri.org/ForInvoice.xsd" xmlns="http://tempuri.org/ForInvoice.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ForInvoice" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ForInvoice" msprop:Generator_UserDSName="ForInvoice">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable_Invoice" msprop:Generator_TableClassName="DataTable_InvoiceDataTable" msprop:Generator_TableVarName="tableDataTable_Invoice" msprop:Generator_RowChangedName="DataTable_InvoiceRowChanged" msprop:Generator_TablePropName="DataTable_Invoice" msprop:Generator_RowDeletingName="DataTable_InvoiceRowDeleting" msprop:Generator_RowChangingName="DataTable_InvoiceRowChanging" msprop:Generator_RowEvHandlerName="DataTable_InvoiceRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable_InvoiceRowDeleted" msprop:Generator_RowClassName="DataTable_InvoiceRow" msprop:Generator_UserTableName="DataTable_Invoice" msprop:Generator_RowEvArgName="DataTable_InvoiceRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="license_name" msprop:Generator_ColumnVarNameInTable="columnlicense_name" msprop:Generator_ColumnPropNameInRow="license_name" msprop:Generator_ColumnPropNameInTable="license_nameColumn" msprop:Generator_UserColumnName="license_name" type="xs:string" minOccurs="0" />
+              <xs:element name="car_type" msprop:Generator_ColumnVarNameInTable="columncar_type" msprop:Generator_ColumnPropNameInRow="car_type" msprop:Generator_ColumnPropNameInTable="car_typeColumn" msprop:Generator_UserColumnName="car_type" type="xs:string" minOccurs="0" />
+              <xs:element name="dateti" msprop:Generator_ColumnVarNameInTable="columndateti" msprop:Generator_ColumnPropNameInRow="dateti" msprop:Generator_ColumnPropNameInTable="datetiColumn" msprop:Generator_UserColumnName="dateti" type="xs:string" minOccurs="0" />
+              <xs:element name="dateto" msprop:Generator_ColumnVarNameInTable="columndateto" msprop:Generator_ColumnPropNameInRow="dateto" msprop:Generator_ColumnPropNameInTable="datetoColumn" msprop:Generator_UserColumnName="dateto" type="xs:string" minOccurs="0" />
+              <xs:element name="total_hours" msprop:Generator_ColumnVarNameInTable="columntotal_hours" msprop:Generator_ColumnPropNameInRow="total_hours" msprop:Generator_ColumnPropNameInTable="total_hoursColumn" msprop:Generator_UserColumnName="total_hours" type="xs:string" minOccurs="0" />
+              <xs:element name="amountpay" msprop:Generator_ColumnVarNameInTable="columnamountpay" msprop:Generator_ColumnPropNameInRow="amountpay" msprop:Generator_ColumnPropNameInTable="amountpayColumn" msprop:Generator_UserColumnName="amountpay" type="xs:string" minOccurs="0" />
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
+              <xs:element name="date" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_UserColumnName="date" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

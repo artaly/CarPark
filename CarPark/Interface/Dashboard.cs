@@ -61,7 +61,7 @@ namespace CarPark
             btnAbandon.Enabled = false;
             timer.Enabled = true;
 
-            int car_type;
+            /*int car_type;
 
             using (var con = new SqlConnection(UserSQL.ConString))
             {
@@ -73,7 +73,7 @@ namespace CarPark
                     car_type = (int)cmd.ExecuteScalar();
 
                 }
-            }
+            }*/
 
 
             int available;
@@ -199,7 +199,7 @@ namespace CarPark
 
                             String timeIn = time.ToString("h:mm:ss tt");
 
-                            QueryInsert = "INSERT INTO car_transactions(brand, color, license_name, ctype_id, time_in, dateti, time_out, dateto, total_hours, date, amountpay) VALUES('" + tbxBrand.Text + "', '" + tbxColor.Text + "', '" + tbxLicense.Text + "', '" + cbxType.SelectedValue + "', '" + timeIn + "', '" + txtDisplayDate + "', '" + null + "', '" + null + "', '" + null + "', '" + dateToday + "', '" + null + "')";
+                            QueryInsert = "INSERT INTO car_transactions(brand, color, license_name, ctype_id, car_type, time_in, dateti, time_out, dateto, total_hours, date, amountpay) VALUES('" + tbxBrand.Text + "', '" + tbxColor.Text + "', '" + tbxLicense.Text + "', '" + cbxType.SelectedValue + "',  '" + cbxType.Text + "', '" + timeIn + "', '" + txtDisplayDate + "', '" + null + "', '" + null + "', '" + null + "', '" + dateToday + "', '" + null + "')";
 
                             con.Open();
                             cmd = new SqlCommand(QueryInsert, con);
@@ -233,7 +233,7 @@ namespace CarPark
         {
             con.Close();
             con.Open();
-            QuerySelect = "SELECT date AS 'Date',  license_name AS 'License Plate', brand AS 'Brand', color AS 'Color', ctype_id as 'Type', time_in AS 'Time in', time_out AS 'Time out' FROM car_transactions ORDER BY id DESC";
+            QuerySelect = "SELECT date AS 'Date', license_name AS 'License Plate', brand AS 'Brand', color AS 'Color', car_type as 'Type', time_in AS 'Time in', time_out AS 'Time out' FROM car_transactions ORDER BY id DESC";
             cmd = new SqlCommand(QuerySelect, con);
 
             adapter = new SqlDataAdapter(cmd);
@@ -371,7 +371,7 @@ namespace CarPark
                     }
                     con.Close();
 
-                    QueryInsert = "INSERT INTO transaction_history(date, license_name, total_hours, amountpay) SELECT date, license_name, total_hours, amountpay FROM car_transactions WHERE license_name = '" + tbxLicense.Text + "'";
+                    QueryInsert = "INSERT INTO transaction_history(brand, color, date, license_name, car_type, dateti, dateto, total_hours, amountpay) SELECT brand, color, date, license_name, car_type, dateti, dateto, total_hours, amountpay FROM car_transactions WHERE license_name = '" + tbxLicense.Text + "'";
 
                     con.Open();
                     cmd = new SqlCommand(QueryInsert, con);
@@ -400,6 +400,8 @@ namespace CarPark
             {
                 MessageBox.Show("No entries currently available.", "Error");
             }
+
+            new Receipt().Show();
 
         }
 
