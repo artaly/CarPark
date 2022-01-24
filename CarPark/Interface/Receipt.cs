@@ -28,7 +28,8 @@ namespace CarPark
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-           
+
+            this.reportViewer1.RefreshReport();
         }
 
 

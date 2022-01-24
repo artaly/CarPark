@@ -35,6 +35,7 @@ namespace CarPark
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receipt));
             this.lblClose = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.lblClose)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +43,7 @@ namespace CarPark
             // 
             this.lblClose.Image = ((System.Drawing.Image)(resources.GetObject("lblClose.Image")));
             this.lblClose.Location = new System.Drawing.Point(573, 15);
-            this.lblClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblClose.Margin = new System.Windows.Forms.Padding(4);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(37, 34);
             this.lblClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -54,16 +55,25 @@ namespace CarPark
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Location = new System.Drawing.Point(82, 115);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            this.reportViewer1.TabIndex = 11;
+            // 
             // Receipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(627, 730);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.lblClose);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Receipt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -77,6 +87,7 @@ namespace CarPark
         #endregion
         private System.Windows.Forms.PictureBox lblClose;
         private System.Windows.Forms.Timer timer;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }
 
