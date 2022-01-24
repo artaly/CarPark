@@ -63,7 +63,7 @@ namespace CarPark
 
             int car_type;
 
-            using (var con = new SqlConnection(UserSQL.ConString))
+            /*using (var con = new SqlConnection(UserSQL.ConString))
             {
                 var sql = "SELECT ctype_id FROM car_transactions";
                 using (var cmd = new SqlCommand(sql, con))
@@ -73,10 +73,9 @@ namespace CarPark
                     car_type = (int)cmd.ExecuteScalar();
 
                 }
-            }
+            }*/
 
-            
-
+         
             int available;
             using (var con = new SqlConnection(UserSQL.ConString))
             {
@@ -194,12 +193,13 @@ namespace CarPark
                         {
                            con.Close();
                             DateTime date = DateTime.Now;
-                            string txtDisplayDate = string.Format("{0:M/d/yyyy}", date);
+                            string txtDisplayDate = string.Format("{0:M/d/yyyy h:mm:ss tt}", date);
+                            string dateToday = string.Format("{0:M/d/yyyy}", date);
                             var time = DateTime.Now;
 
                             String timeIn = time.ToString("h:mm:ss tt");
 
-                            QueryInsert = "INSERT INTO car_transactions(brand, color, license_name, ctype_id, time_in, time_out, total_hours, date, amountpay) VALUES('" + tbxBrand.Text + "', '" + tbxColor.Text + "', '" + tbxLicense.Text + "','" + cbxType.SelectedValue + "','" + timeIn + "', '" + null + "', '" + null + "', '" + txtDisplayDate + "', '" + null + "')";
+                            QueryInsert = "INSERT INTO car_transactions(brand, color, license_name, ctype_id, time_in, dateti, time_out, dateto, total_hours, date, amountpay) VALUES('" + tbxBrand.Text + "', '" + tbxColor.Text + "', '" + tbxLicense.Text + "', '" + timeIn + "', '" + txtDisplayDate + "', '" + null + "', '" + null + "', '" + null + "', '" + dateToday + "', '" + null + "')";
 
                             con.Open();
                             cmd = new SqlCommand(QueryInsert, con);
@@ -291,11 +291,12 @@ namespace CarPark
                     con.Close();
                     con.Open();
                     DateTime date = DateTime.Now;
+                    string txtDisplayDate = string.Format("{0:M/d/yyyy h:mm:ss tt}", date);
                     var time = DateTime.Now;
 
                     String timeOut = time.ToString("h:mm:ss tt");
 
-                    QueryUpdate = "UPDATE car_transactions SET brand='" + tbxBrand.Text + "', color='" + tbxColor.Text + "', time_out='" + timeOut + "' WHERE license_name='" + tbxLicense.Text + "'";
+                    QueryUpdate = "UPDATE car_transactions SET brand='" + tbxBrand.Text + "', color='" + tbxColor.Text + "', time_out='" + timeOut + "', dateto='" + txtDisplayDate + "' WHERE license_name='" + tbxLicense.Text + "'";
                     cmd = new SqlCommand(QueryUpdate, con);
                     cmd.ExecuteNonQuery();
 
