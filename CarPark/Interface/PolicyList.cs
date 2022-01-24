@@ -31,7 +31,6 @@ namespace CarPark.Interface
 
         public void DataLoader()
         {
-            lblTotal.Text = dtpFromDate.Text;
             dtpFromDate.Format = DateTimePickerFormat.Custom;
             dtpToDate.Format = DateTimePickerFormat.Custom;
 

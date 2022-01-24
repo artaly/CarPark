@@ -534,11 +534,13 @@ namespace CarPark
                     con.Close();
                     con.Open();
                     DateTime date = DateTime.Now;
+                    string txtDisplayDate = string.Format("{0:M/d/yyyy h:mm:ss tt}", date);
+                    string dateToday = string.Format("{0:M/d/yyyy}", date);
                     var time = DateTime.Now;
 
                     String timeOut = time.ToString("h:mm:ss tt");
 
-                    QueryUpdate = "UPDATE car_transactions SET brand='" + tbxBrand.Text + "', color='" + tbxColor.Text + "', time_out='" + timeOut + "' WHERE license_name='" + tbxLicense.Text + "'";
+                    QueryUpdate = "UPDATE car_transactions SET date='" + dateToday + "',brand='" + tbxBrand.Text + "', dateto='" + txtDisplayDate + "', color='" + tbxColor.Text + "', time_out='" + timeOut + "' WHERE license_name='" + tbxLicense.Text + "'";
                     cmd = new SqlCommand(QueryUpdate, con);
                     cmd.ExecuteNonQuery();
 
