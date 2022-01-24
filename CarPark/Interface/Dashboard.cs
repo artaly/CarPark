@@ -577,7 +577,7 @@ namespace CarPark
                     }
                     con.Close();
 
-                    QueryInsert = "INSERT INTO policy_list(date, license_name, total_hours, amountpay) SELECT date, license_name, total_hours, amountpay FROM car_transactions WHERE license_name = '" + tbxLicense.Text + "'";
+                    QueryInsert = "INSERT INTO policy_list(brand, color, license_name, car_type, dateti, dateto, total_hours, date, amountpay) SELECT brand, color, license_name, car_type, dateti, dateto, total_hours, date, amountpay FROM car_transactions WHERE license_name = '" + tbxLicense.Text + "'";
 
                     con.Open();
                     cmd = new SqlCommand(QueryInsert, con);

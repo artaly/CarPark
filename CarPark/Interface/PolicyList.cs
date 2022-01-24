@@ -109,7 +109,7 @@ namespace CarPark.Interface
         private void btnTransfer_Click(object sender, EventArgs e)
         {
 
-            QueryInsert = "INSERT INTO transaction_history(date, license_name, total_hours, amountpay) SELECT date, license_name, total_hours, amountpay FROM policy_list WHERE id = '" + lblNo.Text + "'";
+            QueryInsert = "INSERT INTO transaction_history(brand, color, date, license_name, car_type, dateti, dateto, total_hours, amountpay) SELECT brand, color, date, license_name, car_type, dateti, dateto, total_hours, amountpay FROM policy_list WHERE id = '" + lblNo.Text + "'";
 
             con.Open();
             cmd = new SqlCommand(QueryInsert, con);
@@ -117,6 +117,8 @@ namespace CarPark.Interface
             con.Close();
 
             MessageBox.Show("Car moved to sales report!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            new Receipt().Show();
 
             QueryDelete = "DELETE FROM policy_list WHERE id = '" + lblNo.Text + "'";
             con.Open();
