@@ -129,10 +129,19 @@ namespace CarPark.Interface
 
         private void dgtTransactionDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > -1)
+            try
             {
-                DataGridViewRow Row = dgtTransactionDetails.Rows[e.RowIndex];
-                lblNo.Text = Row.Cells["ID"].Value.ToString();
+                if (e.RowIndex > -1)
+                {
+                    DataGridViewRow Row = dgtTransactionDetails.Rows[e.RowIndex];
+                    lblNo.Text = Row.Cells["ID"].Value.ToString();
+                }
+            } catch (Exception w)
+            {
+
+            }
+            {
+
             }
         }
     }
