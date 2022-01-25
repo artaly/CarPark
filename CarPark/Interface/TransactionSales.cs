@@ -103,41 +103,6 @@ namespace CarPark.Interface
                     }
                     con.Close();
 
-                    /*"SELECT SUM(amountpay) FROM transaction_history WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "'";
-
-                    QuerySelect = "SELECT SUM(amountpay) AS 'Payable' FROM TransactionHistory WHERE employee='" + cmbSearchEmployee.SelectedItem + "' AND status='Loan' AND (date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "')";
-
-                    con.Open();
-                    cmd = new SqlCommand(QuerySelect, con);
-                    reader = cmd.ExecuteReader();
-                    if (reader.HasRows)
-                    {
-                        reader.Read();
-                        lblPayable.Text = reader["Payable"].ToString();
-                        reader.Close();
-                    }
-                    else
-                    {
-                        ClearAll();
-                    }
-                    con.Close();
-
-                    QuerySelect = "SELECT SUM(subtotal) AS 'Cash' FROM TransactionHistory WHERE employee='" + cmbSearchEmployee.SelectedItem + "' AND status='Cash' AND (date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "')";
-
-                    con.Open();
-                    cmd = new SqlCommand(QuerySelect, con);
-                    reader = cmd.ExecuteReader();
-                    if (reader.HasRows)
-                    {
-                        reader.Read();
-                        lblTotalAmount.Text = reader["Cash"].ToString();
-                        reader.Close();
-                    }
-                    else
-                    {
-                        ClearAll();
-                    }
-                    con.Close();*/
                 }
                 catch (Exception ex)
                 {
