@@ -26,6 +26,7 @@ namespace CarPark.Interface
         public static string GetUserAccountType;
         public static string GetUserAccountName;
 
+
         public Login()
         {
             InitializeComponent();
@@ -45,7 +46,7 @@ namespace CarPark.Interface
                 {
                     reader.Read();
                     GetUserAccountType = reader["role"].ToString();
-                    GetUserAccountName = reader["first_name"].ToString();
+                    GetUserAccountName = reader["last_name"].ToString() + ", " + reader["first_name"].ToString();
                 }
                 con.Close();
 
