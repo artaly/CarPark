@@ -43,6 +43,7 @@ namespace CarPark.Interface
             this.btnReturn = new System.Windows.Forms.Button();
             this.lblForTotal = new System.Windows.Forms.Label();
             this.lblClose = new System.Windows.Forms.PictureBox();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgtTransactionDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblClose)).BeginInit();
@@ -219,12 +220,25 @@ namespace CarPark.Interface
             this.lblClose.TabStop = false;
             this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.DimGray;
+            this.lblTotal.Location = new System.Drawing.Point(182, 580);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(20, 24);
+            this.lblTotal.TabIndex = 37;
+            this.lblTotal.Text = "0";
+            // 
             // TransactionSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1161, 638);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblForTotal);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.lblClose);
@@ -264,5 +278,6 @@ namespace CarPark.Interface
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Label lblForTotal;
         private System.Windows.Forms.PictureBox lblClose;
+        private System.Windows.Forms.Label lblTotal;
     }
 }
