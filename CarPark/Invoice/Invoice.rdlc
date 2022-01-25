@@ -69,7 +69,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>2.9831cm</Top>
+        <Top>2.62327cm</Top>
         <Left>2.27214cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -103,7 +103,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>id</rd:DefaultName>
-        <Top>3.01838cm</Top>
+        <Top>2.62327cm</Top>
         <Left>5.55297cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -137,7 +137,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>5.34671cm</Top>
+        <Top>4.98688cm</Top>
         <Left>2.27214cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -171,7 +171,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>6.1231cm</Top>
+        <Top>5.76327cm</Top>
         <Left>2.27214cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -205,7 +205,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>3.75949cm</Top>
+        <Top>3.39966cm</Top>
         <Left>2.27214cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -239,7 +239,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>4.57032cm</Top>
+        <Top>4.21049cm</Top>
         <Left>2.27214cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -273,7 +273,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>6.86421cm</Top>
+        <Top>6.50438cm</Top>
         <Left>2.27214cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -307,7 +307,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>license_name</rd:DefaultName>
-        <Top>3.75949cm</Top>
+        <Top>3.39966cm</Top>
         <Left>5.55297cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -341,7 +341,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>total_hours</rd:DefaultName>
-        <Top>6.86421cm</Top>
+        <Top>6.53966cm</Top>
         <Left>5.55297cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -375,7 +375,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>car_type</rd:DefaultName>
-        <Top>4.57032cm</Top>
+        <Top>4.21049cm</Top>
         <Left>5.55297cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -409,7 +409,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>dateti</rd:DefaultName>
-        <Top>5.34671cm</Top>
+        <Top>4.98688cm</Top>
         <Left>5.55297cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -443,7 +443,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>dateto</rd:DefaultName>
-        <Top>6.1231cm</Top>
+        <Top>5.76327cm</Top>
         <Left>5.55297cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -477,7 +477,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>7.60532cm</Top>
+        <Top>7.24549cm</Top>
         <Left>2.27214cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -511,11 +511,78 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>amountpay</rd:DefaultName>
-        <Top>7.6406cm</Top>
+        <Top>7.24549cm</Top>
         <Left>5.55297cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>15</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox11">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Issued By</Value>
+                <Style>
+                  <FontFamily />
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>8.02188cm</Top>
+        <Left>2.27214cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="issued_by">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!amountpay.Value, "DataSet_Invoice")</Value>
+                <Style>
+                  <FontFamily />
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>8.02188cm</Top>
+        <Left>5.55297cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
