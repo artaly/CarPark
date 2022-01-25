@@ -90,5 +90,31 @@ namespace CarPark.Interface
         {
             DataLoader();
         }
+
+        private void cmbSearchEmployee_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                QuerySelect = "SELECT last_name, first_name FROM Employees ORDER BY last_name ASC";
+
+                con.Open();
+                cmd = new SqlCommand(QuerySelect, con);
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    cmbSearchEmployee.Items.Clear();
+                    while (reader.Read())
+                    {
+                        string load = reader["last_name"].ToString() + ", " + reader["first_name"].ToString();
+                        cmbSearchEmployee.Items.Add(load);
+                    }
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

@@ -46,6 +46,8 @@ namespace CarPark.Interface
             this.lblForTotal = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblClose = new System.Windows.Forms.PictureBox();
+            this.cmbSearchEmployee = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnExcel)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgtTransactionDetails)).BeginInit();
@@ -58,7 +60,7 @@ namespace CarPark.Interface
             this.btnExcel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
             this.btnExcel.ImageActive = null;
-            this.btnExcel.Location = new System.Drawing.Point(507, 71);
+            this.btnExcel.Location = new System.Drawing.Point(1025, 83);
             this.btnExcel.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(71, 59);
@@ -78,7 +80,7 @@ namespace CarPark.Interface
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(377, 118);
+            this.btnSearch.Location = new System.Drawing.Point(735, 120);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 33);
@@ -91,7 +93,7 @@ namespace CarPark.Interface
             // 
             this.dtpToDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpToDate.Location = new System.Drawing.Point(209, 118);
+            this.dtpToDate.Location = new System.Drawing.Point(567, 120);
             this.dtpToDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(159, 32);
@@ -101,7 +103,7 @@ namespace CarPark.Interface
             // 
             this.dtpFromDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFromDate.Location = new System.Drawing.Point(41, 118);
+            this.dtpFromDate.Location = new System.Drawing.Point(399, 120);
             this.dtpFromDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.Size = new System.Drawing.Size(159, 32);
@@ -112,7 +114,7 @@ namespace CarPark.Interface
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(205, 95);
+            this.label7.Location = new System.Drawing.Point(563, 97);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 18);
@@ -124,7 +126,7 @@ namespace CarPark.Interface
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(491, 134);
+            this.label3.Location = new System.Drawing.Point(1009, 146);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 18);
@@ -136,7 +138,7 @@ namespace CarPark.Interface
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(37, 95);
+            this.label2.Location = new System.Drawing.Point(395, 97);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 18);
@@ -263,12 +265,40 @@ namespace CarPark.Interface
             this.lblClose.TabStop = false;
             this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
             // 
+            // cmbSearchEmployee
+            // 
+            this.cmbSearchEmployee.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbSearchEmployee.DropDownHeight = 100;
+            this.cmbSearchEmployee.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSearchEmployee.FormattingEnabled = true;
+            this.cmbSearchEmployee.IntegralHeight = false;
+            this.cmbSearchEmployee.Location = new System.Drawing.Point(45, 119);
+            this.cmbSearchEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbSearchEmployee.Name = "cmbSearchEmployee";
+            this.cmbSearchEmployee.Size = new System.Drawing.Size(343, 32);
+            this.cmbSearchEmployee.TabIndex = 39;
+            this.cmbSearchEmployee.Click += new System.EventHandler(this.cmbSearchEmployee_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.DimGray;
+            this.label15.Location = new System.Drawing.Point(41, 97);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(66, 18);
+            this.label15.TabIndex = 38;
+            this.label15.Text = "Issued By";
+            // 
             // TransactionSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1161, 638);
+            this.Controls.Add(this.cmbSearchEmployee);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblForTotal);
             this.Controls.Add(this.btnReturn);
@@ -316,5 +346,7 @@ namespace CarPark.Interface
         private System.Windows.Forms.Label lblForTotal;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.PictureBox lblClose;
+        private System.Windows.Forms.ComboBox cmbSearchEmployee;
+        private System.Windows.Forms.Label label15;
     }
 }
