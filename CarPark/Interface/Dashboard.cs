@@ -24,6 +24,7 @@ namespace CarPark
         public static SqlConnection con = new SqlConnection(UserSQL.ConString);
         public static SqlCommand cmd = new SqlCommand();
         public static SqlDataReader reader;
+        public static SqlDataReader reader1;
         public static SqlDataAdapter adapter;
         public static DataTable dt = new DataTable();
         public static string QueryInsert;
@@ -167,12 +168,7 @@ namespace CarPark
             }
             else
             {
-                available = available - 1;
-                occupied = occupied + 1;
-
-                /// Write data to labels
-                lblAvailableSlot.Text = available.ToString();
-                lblOccupiedSlot.Text = occupied.ToString();
+               
 
                 if (available > 0)
                 {
@@ -183,15 +179,43 @@ namespace CarPark
                         con.Open();
                         cmd = new SqlCommand(QuerySelect, con);
                         reader = cmd.ExecuteReader();
+
+                        string QuerySelect1 = "SELECT * FROM car_transactions WHERE license_name='" + tbxLicense.Text + "'";
+
+                        cmd = new SqlCommand(QuerySelect1, con);
+                        reader1 = cmd.ExecuteReader();
+
                         if (reader.HasRows)
                         {
-                            MessageBox.Show("This car has already registered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            tbxBrand.Focus();
+                            MessageBox.Show("This car is already registered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            tbxLicense.Focus();
                             ClearAll();
+
+                            available = available + 1;
+                            occupied = occupied - 1;
+
                         }
+
+                        else if (reader1.HasRows)
+                        {
+                            MessageBox.Show("This license is already registered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            tbxLicense.Focus();
+                            ClearAll();
+                            available = available + 1;
+                            occupied = occupied - 1;
+
+                            con.Close();
+                        }
+
                         else
                         {
-                           con.Close();
+                            available = available - 1;
+                            occupied = occupied + 1;
+
+                            /// Write data to labels
+                            lblAvailableSlot.Text = available.ToString();
+                            lblOccupiedSlot.Text = occupied.ToString();
+                            con.Close();
                             DateTime date = DateTime.Now;
                             string txtDisplayDate = string.Format("{0:M/d/yyyy h:mm:ss tt}", date);
                             string dateToday = string.Format("{0:M/d/yyyy}", date);
