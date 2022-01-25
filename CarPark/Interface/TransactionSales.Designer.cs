@@ -288,6 +288,7 @@ namespace CarPark.Interface
             this.Name = "TransactionSales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TransactionSales";
+            this.Load += new System.EventHandler(this.TransactionSales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnExcel)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgtTransactionDetails)).EndInit();
