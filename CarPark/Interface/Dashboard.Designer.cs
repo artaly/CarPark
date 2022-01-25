@@ -33,7 +33,7 @@ namespace CarPark
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpbInput = new System.Windows.Forms.GroupBox();
             this.btnAbandon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.cbxType = new System.Windows.Forms.ComboBox();
@@ -557,12 +557,12 @@ namespace CarPark
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblUser.Font = new System.Drawing.Font("Corbel", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Font = new System.Drawing.Font("Corbel", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUser.Location = new System.Drawing.Point(105, 90);
+            this.lblUser.Location = new System.Drawing.Point(19, 107);
             this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(194, 73);
+            this.lblUser.Size = new System.Drawing.Size(142, 54);
             this.lblUser.TabIndex = 4;
             this.lblUser.Text = "NAME";
             // 
@@ -615,9 +615,9 @@ namespace CarPark
             this.dtgData.Name = "dtgData";
             this.dtgData.ReadOnly = true;
             this.dtgData.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.dtgData.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.dtgData.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgData.Size = new System.Drawing.Size(1366, 657);
             this.dtgData.TabIndex = 35;
             this.dtgData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgData_CellClick);
