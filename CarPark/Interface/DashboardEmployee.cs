@@ -206,7 +206,7 @@ namespace CarPark
 
                 tbxTimeIn.Text = Row.Cells["Time in"].Value.ToString();
                 tbxTimeOut.Text = Row.Cells["Time out"].Value.ToString();
-                tbxLicense.Text = Row.Cells["License Plate"].Value.ToString();
+                tbxLicense.Text = Row.Cells["Plate Number"].Value.ToString();
                 tbxBrand.Text = Row.Cells["Brand"].Value.ToString();
                 tbxColor.Text = Row.Cells["Color"].Value.ToString();
                

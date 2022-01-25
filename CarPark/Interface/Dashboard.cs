@@ -29,6 +29,7 @@ namespace CarPark
         public static DataTable dt = new DataTable();
         public static string QueryInsert;
         public static string QuerySelect;
+        public static string issued_by = Login.GetUserAccountName.ToString();
         public static string QueryUpdate;
         public static string QueryDelete;
         public static int standardRate = 25;
@@ -37,6 +38,7 @@ namespace CarPark
         public static int available;
         public static int occupied;
         int numVehicles = 0;
+        
 
         // Clear all input textboxes
         public void ClearAll()
@@ -223,7 +225,9 @@ namespace CarPark
 
                             String timeIn = time.ToString("h:mm:ss tt");
 
-                            QueryInsert = "INSERT INTO car_transactions(brand, color, license_name, ctype_id, car_type, time_in, dateti, time_out, dateto, total_hours, date, amountpay) VALUES('" + tbxBrand.Text + "', '" + tbxColor.Text + "', '" + tbxLicense.Text + "', '" + cbxType.SelectedValue + "',  '" + cbxType.Text + "', '" + timeIn + "', '" + txtDisplayDate + "', '" + null + "', '" + null + "', '" + null + "', '" + dateToday + "', '" + null + "')";
+
+
+                            QueryInsert = "INSERT INTO car_transactions(brand, color, license_name, ctype_id, car_type, time_in, dateti, time_out, dateto, total_hours, date, amountpay, issued_by) VALUES('" + tbxBrand.Text + "', '" + tbxColor.Text + "', '" + tbxLicense.Text + "', '" + cbxType.SelectedValue + "',  '" + cbxType.Text + "', '" + timeIn + "', '" + txtDisplayDate + "', '" + null + "', '" + null + "', '" + null + "', '" + dateToday + "', '" + null + "', '" + issued_by + "')";
 
                             con.Open();
                             cmd = new SqlCommand(QueryInsert, con);
@@ -257,7 +261,7 @@ namespace CarPark
         {
             con.Close();
             con.Open();
-            QuerySelect = "SELECT date AS 'Date', license_name AS 'Plate Number', brand AS 'Brand', color AS 'Color', car_type as 'Type', time_in AS 'Time in', time_out AS 'Time out' FROM car_transactions ORDER BY id DESC";
+            QuerySelect = "SELECT date AS 'Date', license_name AS 'Plate Number', brand AS 'Brand', color AS 'Color', car_type as 'Type', time_in AS 'Time in', issued_by AS 'Issued by' FROM car_transactions ORDER BY id DESC";
             cmd = new SqlCommand(QuerySelect, con);
 
             adapter = new SqlDataAdapter(cmd);
@@ -395,7 +399,7 @@ namespace CarPark
                     }
                     con.Close();
 
-                    QueryInsert = "INSERT INTO transaction_history(brand, color, date, license_name, car_type, dateti, dateto, total_hours, amountpay) SELECT brand, color, date, license_name, car_type, dateti, dateto, total_hours, amountpay FROM car_transactions WHERE license_name = '" + tbxLicense.Text + "'";
+                    QueryInsert = "INSERT INTO transaction_history(brand, color, date, license_name, car_type, dateti, dateto, total_hours, amountpay, issued_by) SELECT brand, color, date, license_name, car_type, dateti, dateto, total_hours, amountpay, issued_by FROM car_transactions WHERE license_name = '" + tbxLicense.Text + "'";
 
                     con.Open();
                     cmd = new SqlCommand(QueryInsert, con);
@@ -603,7 +607,7 @@ namespace CarPark
                     }
                     con.Close();
 
-                    QueryInsert = "INSERT INTO policy_list(brand, color, license_name, car_type, dateti, dateto, total_hours, date, amountpay) SELECT brand, color, license_name, car_type, dateti, dateto, total_hours, date, amountpay FROM car_transactions WHERE license_name = '" + tbxLicense.Text + "'";
+                    QueryInsert = "INSERT INTO policy_list(brand, color, license_name, car_type, dateti, dateto, total_hours, date, amountpay, issued_by) SELECT brand, color, license_name, car_type, dateti, dateto, total_hours, date, amountpay, issued_by FROM car_transactions WHERE license_name = '" + tbxLicense.Text + "'";
 
                     con.Open();
                     cmd = new SqlCommand(QueryInsert, con);
@@ -641,12 +645,12 @@ namespace CarPark
                DataGridViewRow Row = dtgData.Rows[e.RowIndex];
                 btnAbandon.Enabled = true;
                 tbxTimeIn.Text = Row.Cells["Time in"].Value.ToString();
-               tbxTimeOut.Text = Row.Cells["Time out"].Value.ToString();
-               tbxLicense.Text = Row.Cells["License Plate"].Value.ToString();
+               //tbxTimeOut.Text = Row.Cells["Time out"].Value.ToString();
+               tbxLicense.Text = Row.Cells["Plate Number"].Value.ToString();
                tbxBrand.Text = Row.Cells["Brand"].Value.ToString();
                tbxColor.Text = Row.Cells["Color"].Value.ToString();
                 
-                /// Prevent error when selecting rows with empty/null cells
+               /* /// Prevent error when selecting rows with empty/null cells
                 if (Row.Cells["Time out"].Value.ToString() != null)
                {
 
@@ -655,7 +659,7 @@ namespace CarPark
                else
                {
                    lblTimeout.Text = null;
-               }
+               }*/
 
            }
         }
