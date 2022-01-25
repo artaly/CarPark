@@ -36,8 +36,8 @@ namespace CarPark.Interface
 
             dtpFromDate.CustomFormat = "M/d/yyyy";
             dtpToDate.CustomFormat = "M/d/yyyy";
-            con.Open();
-            QuerySelect = "SELECT  id as 'ID', date as 'Date', license_name AS 'PLATE NUMBER', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT PAID' FROM policy_list WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "' ORDER BY date ASC";
+            con.Open(); 
+            QuerySelect = "SELECT date as 'Date', license_name AS 'PLATE NUMBER', car_type AS 'TYPE', dateti as 'TIME IN', dateto as 'TIME OUT', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT PAID', issued_by as 'Issued By' FROM policy_list WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "' ORDER BY date ASC";
             cmd = new SqlCommand(QuerySelect, con);
 
             adapter = new SqlDataAdapter(cmd);
