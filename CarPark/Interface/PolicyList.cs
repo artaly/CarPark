@@ -108,7 +108,7 @@ namespace CarPark.Interface
         private void btnTransfer_Click(object sender, EventArgs e)
         {
 
-            QueryInsert = "INSERT INTO transaction_history(brand, color, date, license_name, car_type, dateti, dateto, total_hours, amountpay) SELECT brand, color, date, license_name, car_type, dateti, dateto, total_hours, amountpay FROM policy_list WHERE id = '" + lblNo.Text + "'";
+            QueryInsert = "INSERT INTO transaction_history(brand, color, date, license_name, car_type, dateti, dateto, total_hours, amountpay, issued_by) SELECT brand, color, date, license_name, car_type, dateti, dateto, total_hours, amountpay, issued_by FROM policy_list WHERE id = '" + lblNo.Text + "'";
 
             con.Open();
             cmd = new SqlCommand(QueryInsert, con);
