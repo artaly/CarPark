@@ -88,7 +88,7 @@ namespace CarPark.Interface
 
         private void TransactionSales_Load(object sender, EventArgs e)
         {
-            DataLoader()
+            DataLoader();
         }
     }
 }
