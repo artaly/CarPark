@@ -35,7 +35,7 @@ namespace CarPark
         {
 
             this.reportViewer1.RefreshReport();
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT id, license_name, car_type, dateti, dateto, total_hours, amountpay FROM transaction_history ORDER BY id DESC", con);
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT id, license_name, car_type, dateti, dateto, total_hours, amountpay, issued_by FROM transaction_history ORDER BY id DESC", con);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "ForInvoice");
 
