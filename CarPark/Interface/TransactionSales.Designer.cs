@@ -30,12 +30,10 @@ namespace CarPark.Interface
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransactionSales));
-            this.btnExcel = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,29 +42,11 @@ namespace CarPark.Interface
             this.dgtTransactionDetails = new System.Windows.Forms.DataGridView();
             this.btnReturn = new System.Windows.Forms.Button();
             this.lblForTotal = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
             this.lblClose = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExcel)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgtTransactionDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblClose)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnExcel
-            // 
-            this.btnExcel.BackColor = System.Drawing.Color.Transparent;
-            this.btnExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
-            this.btnExcel.ImageActive = null;
-            this.btnExcel.Location = new System.Drawing.Point(1025, 83);
-            this.btnExcel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(71, 59);
-            this.btnExcel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExcel.TabIndex = 31;
-            this.btnExcel.TabStop = false;
-            this.btnExcel.Zoom = 10;
-            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // btnSearch
             // 
@@ -118,18 +98,6 @@ namespace CarPark.Interface
             this.label7.Size = new System.Drawing.Size(55, 18);
             this.label7.TabIndex = 23;
             this.label7.Text = "To Date";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(1009, 146);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 18);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Export to Excel";
             // 
             // label2
             // 
@@ -239,18 +207,6 @@ namespace CarPark.Interface
             this.lblForTotal.TabIndex = 36;
             this.lblForTotal.Text = "TOTAL SALES: ";
             // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.ForeColor = System.Drawing.Color.DimGray;
-            this.lblTotal.Location = new System.Drawing.Point(187, 578);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(20, 24);
-            this.lblTotal.TabIndex = 37;
-            this.lblTotal.Text = "0";
-            // 
             // lblClose
             // 
             this.lblClose.Image = ((System.Drawing.Image)(resources.GetObject("lblClose.Image")));
@@ -269,17 +225,14 @@ namespace CarPark.Interface
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1161, 638);
-            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblForTotal);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.lblClose);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dtpToDate);
             this.Controls.Add(this.dtpFromDate);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -289,7 +242,6 @@ namespace CarPark.Interface
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TransactionSales";
             this.Load += new System.EventHandler(this.TransactionSales_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.btnExcel)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgtTransactionDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblClose)).EndInit();
@@ -299,13 +251,10 @@ namespace CarPark.Interface
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuImageButton btnExcel;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
@@ -314,7 +263,6 @@ namespace CarPark.Interface
         private System.Windows.Forms.DataGridView dgtTransactionDetails;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Label lblForTotal;
-        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.PictureBox lblClose;
     }
 }
