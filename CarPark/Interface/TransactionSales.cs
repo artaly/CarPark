@@ -28,12 +28,6 @@ namespace CarPark.Interface
 
         public void DataLoader()
         {
-            lblTotal.Text = dtpFromDate.Text;
-            dtpFromDate.Format = DateTimePickerFormat.Custom;
-            dtpToDate.Format = DateTimePickerFormat.Custom;
-
-            dtpFromDate.CustomFormat = "M/d/yyyy";
-            dtpToDate.CustomFormat = "M/d/yyyy";
             con.Open();
 
             QuerySelect = "SELECT date as 'Date', license_name AS 'PLATE NUMBER', car_type AS 'TYPE', dateti as 'TIME IN', dateto as 'TIME OUT', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT PAID', issued_by as 'Issued By' FROM transaction_history ORDER BY date ASC";
@@ -99,6 +93,22 @@ namespace CarPark.Interface
                     dgtTransactionDetails.DataSource = dt;
                     dgtTransactionDetails.Refresh();
 
+                    cmd = con.CreateCommand();
+                    con.Open();
+                    cmd.CommandText = "SELECT SUM(amountpay) FROM transaction_history WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "' AND issued_by='" + cmbSearchEmployee.SelectedItem + "' ORDER BY date ASC";
+
+                    try
+                    {
+                        var obj = cmd.ExecuteScalar();
+                        double result = obj != null ? (double)obj : 0;
+
+                        lblTotal.Text = "PHP " + result.ToString();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("No transaction!");
+                    }
+                    con.Close();
 
                     /*"SELECT SUM(amountpay) FROM transaction_history WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "'";
 
