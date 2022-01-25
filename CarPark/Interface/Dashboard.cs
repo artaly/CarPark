@@ -198,7 +198,7 @@ namespace CarPark
 
                         else if (reader1.HasRows)
                         {
-                            MessageBox.Show("This license is already registered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("This plate number is already registered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             tbxLicense.Focus();
                             ClearAll();
                             available = available + 1;
@@ -257,7 +257,7 @@ namespace CarPark
         {
             con.Close();
             con.Open();
-            QuerySelect = "SELECT date AS 'Date', license_name AS 'License Plate', brand AS 'Brand', color AS 'Color', car_type as 'Type', time_in AS 'Time in', time_out AS 'Time out' FROM car_transactions ORDER BY id DESC";
+            QuerySelect = "SELECT date AS 'Date', license_name AS 'Plate Number', brand AS 'Brand', color AS 'Color', car_type as 'Type', time_in AS 'Time in', time_out AS 'Time out' FROM car_transactions ORDER BY id DESC";
             cmd = new SqlCommand(QuerySelect, con);
 
             adapter = new SqlDataAdapter(cmd);
