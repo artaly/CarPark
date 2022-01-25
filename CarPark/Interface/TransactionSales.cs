@@ -122,74 +122,12 @@ namespace CarPark.Interface
             this.Close();
         }
 
-        private void btnExcel_Click(object sender, EventArgs e)
-        {
-            ExportToExcel();
-        }
-
         private void TransactionSales_Load(object sender, EventArgs e)
         {
             DataLoader();
         }
 
-        private void ExportToExcel()
-        {
-            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-            excel.Visible = true;
-            Microsoft.Office.Interop.Excel.Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
-            Microsoft.Office.Interop.Excel.Worksheet sheet1 = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets[1];
-
-            try
-            {
-                int StartCol = 1;
-                int StartRow = 1;
-                int j = 0, i = 0;
-
-                //Write Headers
-                for (j = 0; j < dgtTransactionDetails.Columns.Count; j++)
-                {
-                    Microsoft.Office.Interop.Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[StartRow, StartCol + j];
-                    Microsoft.Office.Interop.Excel.Range myRange1 = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[StartRow, StartCol + 8];
-                    Microsoft.Office.Interop.Excel.Range myRange2 = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[StartRow + 1, StartCol + 8];
-                    myRange.Value2 = dgtTransactionDetails.Columns[j].HeaderText;
-                    myRange1.Value2 = lblForTotal.Text;
-                }
-
-                StartRow++;
-
-
-                //Write datagridview content
-                for (i = 0; i < dgtTransactionDetails.Rows.Count; i++)
-                {
-                    for (j = 0; j < dgtTransactionDetails.Columns.Count; j++)
-                    {
-                        try
-
-                        {
-                            Microsoft.Office.Interop.Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
-                            myRange.Value2 = dgtTransactionDetails[j, i].Value == null ? "" : dgtTransactionDetails[j, i].Value;
-                            myRange.Columns[4].NumberFormat = "dd/MMM/yyyy;@";
-                            myRange.Columns[5].NumberFormat = "dd/MMM/yyyy;@";
-
-                        }
-                        catch
-                        {
-                            ;
-                        }
-                    }
-                }
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                excel.Quit();
-                workbook = null;
-                excel = null;
-            }
-        }
+        
 
     }
 }
