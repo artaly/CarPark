@@ -295,6 +295,8 @@ namespace CarPark.Invoice {
             
             private global::System.Data.DataColumn columndate;
             
+            private global::System.Data.DataColumn columnissued_by;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DataTable_InvoiceDataTable() {
@@ -394,6 +396,14 @@ namespace CarPark.Invoice {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn issued_byColumn {
+                get {
+                    return this.columnissued_by;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -429,7 +439,7 @@ namespace CarPark.Invoice {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable_InvoiceRow AddDataTable_InvoiceRow(string license_name, string car_type, string dateti, string dateto, string total_hours, string amountpay, string id, string date) {
+            public DataTable_InvoiceRow AddDataTable_InvoiceRow(string license_name, string car_type, string dateti, string dateto, string total_hours, string amountpay, string id, string date, string issued_by) {
                 DataTable_InvoiceRow rowDataTable_InvoiceRow = ((DataTable_InvoiceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         license_name,
@@ -439,7 +449,8 @@ namespace CarPark.Invoice {
                         total_hours,
                         amountpay,
                         id,
-                        date};
+                        date,
+                        issued_by};
                 rowDataTable_InvoiceRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable_InvoiceRow);
                 return rowDataTable_InvoiceRow;
@@ -470,6 +481,7 @@ namespace CarPark.Invoice {
                 this.columnamountpay = base.Columns["amountpay"];
                 this.columnid = base.Columns["id"];
                 this.columndate = base.Columns["date"];
+                this.columnissued_by = base.Columns["issued_by"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -491,6 +503,8 @@ namespace CarPark.Invoice {
                 base.Columns.Add(this.columnid);
                 this.columndate = new global::System.Data.DataColumn("date", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndate);
+                this.columnissued_by = new global::System.Data.DataColumn("issued_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnissued_by);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -761,6 +775,22 @@ namespace CarPark.Invoice {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string issued_by {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable_Invoice.issued_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'issued_by\' in table \'DataTable_Invoice\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable_Invoice.issued_byColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Islicense_nameNull() {
                 return this.IsNull(this.tableDataTable_Invoice.license_nameColumn);
             }
@@ -853,6 +883,18 @@ namespace CarPark.Invoice {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdateNull() {
                 this[this.tableDataTable_Invoice.dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isissued_byNull() {
+                return this.IsNull(this.tableDataTable_Invoice.issued_byColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setissued_byNull() {
+                this[this.tableDataTable_Invoice.issued_byColumn] = global::System.Convert.DBNull;
             }
         }
         
