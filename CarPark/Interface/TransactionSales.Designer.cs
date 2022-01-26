@@ -148,7 +148,7 @@ namespace CarPark.Interface
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.label6.Size = new System.Drawing.Size(1071, 57);
+            this.label6.Size = new System.Drawing.Size(1282, 57);
             this.label6.TabIndex = 32;
             this.label6.Text = "Sales List";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -160,7 +160,7 @@ namespace CarPark.Interface
             this.panel1.Location = new System.Drawing.Point(41, 174);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1071, 385);
+            this.panel1.Size = new System.Drawing.Size(1282, 529);
             this.panel1.TabIndex = 33;
             // 
             // dgtTransactionDetails
@@ -168,6 +168,7 @@ namespace CarPark.Interface
             this.dgtTransactionDetails.AllowUserToAddRows = false;
             this.dgtTransactionDetails.AllowUserToDeleteRows = false;
             this.dgtTransactionDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgtTransactionDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgtTransactionDetails.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dgtTransactionDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgtTransactionDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -177,7 +178,7 @@ namespace CarPark.Interface
             this.dgtTransactionDetails.Name = "dgtTransactionDetails";
             this.dgtTransactionDetails.ReadOnly = true;
             this.dgtTransactionDetails.RowHeadersWidth = 51;
-            this.dgtTransactionDetails.Size = new System.Drawing.Size(1071, 328);
+            this.dgtTransactionDetails.Size = new System.Drawing.Size(1282, 472);
             this.dgtTransactionDetails.TabIndex = 34;
             // 
             // btnReturn
@@ -190,7 +191,7 @@ namespace CarPark.Interface
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.Location = new System.Drawing.Point(1012, 578);
+            this.btnReturn.Location = new System.Drawing.Point(1223, 721);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(4);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(100, 33);
@@ -204,7 +205,7 @@ namespace CarPark.Interface
             this.lblForTotal.AutoSize = true;
             this.lblForTotal.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForTotal.ForeColor = System.Drawing.Color.DimGray;
-            this.lblForTotal.Location = new System.Drawing.Point(40, 578);
+            this.lblForTotal.Location = new System.Drawing.Point(40, 723);
             this.lblForTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblForTotal.Name = "lblForTotal";
             this.lblForTotal.Size = new System.Drawing.Size(143, 24);
@@ -214,7 +215,7 @@ namespace CarPark.Interface
             // lblClose
             // 
             this.lblClose.Image = ((System.Drawing.Image)(resources.GetObject("lblClose.Image")));
-            this.lblClose.Location = new System.Drawing.Point(1118, 13);
+            this.lblClose.Location = new System.Drawing.Point(1316, 13);
             this.lblClose.Margin = new System.Windows.Forms.Padding(4);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(30, 31);
@@ -228,7 +229,7 @@ namespace CarPark.Interface
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.DimGray;
-            this.lblTotal.Location = new System.Drawing.Point(182, 580);
+            this.lblTotal.Location = new System.Drawing.Point(187, 721);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(20, 24);
@@ -241,7 +242,7 @@ namespace CarPark.Interface
             this.btnExcel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
             this.btnExcel.ImageActive = null;
-            this.btnExcel.Location = new System.Drawing.Point(1028, 72);
+            this.btnExcel.Location = new System.Drawing.Point(513, 71);
             this.btnExcel.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(71, 59);
@@ -256,7 +257,7 @@ namespace CarPark.Interface
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(1012, 135);
+            this.label3.Location = new System.Drawing.Point(497, 134);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 18);
@@ -268,7 +269,7 @@ namespace CarPark.Interface
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1161, 638);
+            this.ClientSize = new System.Drawing.Size(1359, 767);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTotal);
