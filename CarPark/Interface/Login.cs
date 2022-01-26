@@ -100,12 +100,6 @@ namespace CarPark.Interface
         private void lblClose_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void lblForgotPassword_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Please contact administrator");
-        }
-            
+        }   
     }
 }
