@@ -84,11 +84,6 @@ namespace CarPark.Interface
             this.Close();
         }
 
-        private void btnExcel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void PolicyList_Load(object sender, EventArgs e)
         {
             QuerySelect = "SELECT id as 'ID', date as 'Date', license_name AS 'PLATE NUMBER', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT UNPAID' FROM policy_list ORDER BY date ASC";
