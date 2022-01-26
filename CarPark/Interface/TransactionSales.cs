@@ -43,27 +43,12 @@ namespace CarPark.Interface
             dgtTransactionDetails.DataSource = dt;
             dgtTransactionDetails.Refresh();
 
-            cmd = con.CreateCommand();
-            con.Open();
-            cmd.CommandText = "SELECT SUM(amountpay) FROM transaction_history WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "'";
-
-            try
-            {
-                var obj = cmd.ExecuteScalar();
-                double result = obj != null ? (double)obj : 0;
-                
-                lblTotal.Text = "PHP " + result.ToString();
-            } catch
-            {
-                //MessageBox.Show("No transaction!");
-            }
-            con.Close();
 
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-           DataLoader();
+           
                 try
                 {
                     dtpFromDate.Format = DateTimePickerFormat.Custom;
@@ -86,9 +71,13 @@ namespace CarPark.Interface
                     dgtTransactionDetails.DataSource = dt;
                     dgtTransactionDetails.Refresh();
 
+                    lblTotal.Visible = true;
+                    lblForTotal.Visible = true;
+
+
                     cmd = con.CreateCommand();
                     con.Open();
-                    cmd.CommandText = "SELECT SUM(amountpay) FROM transaction_history WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "' ORDER BY date ASC";
+                    cmd.CommandText = "SELECT SUM(amountpay) FROM transaction_history WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "'";
 
                     try
                     {
@@ -125,6 +114,8 @@ namespace CarPark.Interface
         private void TransactionSales_Load(object sender, EventArgs e)
         {
             DataLoader();
+            lblTotal.Visible = false;
+            lblForTotal.Visible = false;
         }
 
         private void copyAlltoClipboard()
