@@ -175,5 +175,15 @@ namespace CarPark.Interface
             ExportToExcel();
 
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

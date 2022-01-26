@@ -41,7 +41,6 @@ namespace CarPark.Interface
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNo = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.dgtTransactionDetails = new System.Windows.Forms.DataGridView();
             this.btnReturn = new System.Windows.Forms.Button();
             this.lblForTotal = new System.Windows.Forms.Label();
@@ -161,20 +160,19 @@ namespace CarPark.Interface
             // 
             this.panel1.Controls.Add(this.lblNo);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.dgtTransactionDetails);
             this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.dgtTransactionDetails);
             this.panel1.Location = new System.Drawing.Point(41, 174);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1071, 385);
+            this.panel1.Size = new System.Drawing.Size(1277, 518);
             this.panel1.TabIndex = 33;
             // 
             // lblNo
             // 
             this.lblNo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblNo.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNo.Location = new System.Drawing.Point(987, 0);
+            this.lblNo.Location = new System.Drawing.Point(1193, 0);
             this.lblNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNo.Name = "lblNo";
             this.lblNo.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
@@ -182,12 +180,13 @@ namespace CarPark.Interface
             this.lblNo.TabIndex = 37;
             this.lblNo.Text = "0";
             this.lblNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblNo.Click += new System.EventHandler(this.lblNo_Click);
             // 
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label8.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(855, 0);
+            this.label8.Location = new System.Drawing.Point(1061, 0);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
@@ -195,20 +194,7 @@ namespace CarPark.Interface
             this.label8.TabIndex = 36;
             this.label8.Text = "Abandoned ID #:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.label5.Size = new System.Drawing.Size(883, 57);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Abandoned List (Cars present here are denied entry, unless customer pays the bala" +
-    "nce)";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // dgtTransactionDetails
             // 
@@ -218,13 +204,13 @@ namespace CarPark.Interface
             this.dgtTransactionDetails.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dgtTransactionDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgtTransactionDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgtTransactionDetails.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgtTransactionDetails.Location = new System.Drawing.Point(0, 57);
+            this.dgtTransactionDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgtTransactionDetails.Location = new System.Drawing.Point(0, 0);
             this.dgtTransactionDetails.Margin = new System.Windows.Forms.Padding(4);
             this.dgtTransactionDetails.Name = "dgtTransactionDetails";
             this.dgtTransactionDetails.ReadOnly = true;
             this.dgtTransactionDetails.RowHeadersWidth = 51;
-            this.dgtTransactionDetails.Size = new System.Drawing.Size(1071, 328);
+            this.dgtTransactionDetails.Size = new System.Drawing.Size(1277, 518);
             this.dgtTransactionDetails.TabIndex = 34;
             this.dgtTransactionDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgtTransactionDetails_CellClick);
             // 
@@ -238,7 +224,7 @@ namespace CarPark.Interface
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.Location = new System.Drawing.Point(1012, 578);
+            this.btnReturn.Location = new System.Drawing.Point(1218, 700);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(4);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(100, 33);
@@ -252,7 +238,7 @@ namespace CarPark.Interface
             this.lblForTotal.AutoSize = true;
             this.lblForTotal.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForTotal.ForeColor = System.Drawing.Color.DimGray;
-            this.lblForTotal.Location = new System.Drawing.Point(40, 578);
+            this.lblForTotal.Location = new System.Drawing.Point(40, 709);
             this.lblForTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblForTotal.Name = "lblForTotal";
             this.lblForTotal.Size = new System.Drawing.Size(219, 24);
@@ -264,7 +250,7 @@ namespace CarPark.Interface
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.DimGray;
-            this.lblTotal.Location = new System.Drawing.Point(272, 578);
+            this.lblTotal.Location = new System.Drawing.Point(272, 709);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(20, 24);
@@ -274,7 +260,7 @@ namespace CarPark.Interface
             // lblClose
             // 
             this.lblClose.Image = ((System.Drawing.Image)(resources.GetObject("lblClose.Image")));
-            this.lblClose.Location = new System.Drawing.Point(1117, 14);
+            this.lblClose.Location = new System.Drawing.Point(1317, 5);
             this.lblClose.Margin = new System.Windows.Forms.Padding(4);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(29, 31);
@@ -293,7 +279,7 @@ namespace CarPark.Interface
             this.btnTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransfer.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransfer.ForeColor = System.Drawing.Color.White;
-            this.btnTransfer.Location = new System.Drawing.Point(843, 578);
+            this.btnTransfer.Location = new System.Drawing.Point(1049, 700);
             this.btnTransfer.Margin = new System.Windows.Forms.Padding(4);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(161, 33);
@@ -308,7 +294,7 @@ namespace CarPark.Interface
             this.btnExcel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
             this.btnExcel.ImageActive = null;
-            this.btnExcel.Location = new System.Drawing.Point(1031, 91);
+            this.btnExcel.Location = new System.Drawing.Point(501, 75);
             this.btnExcel.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(71, 59);
@@ -323,7 +309,7 @@ namespace CarPark.Interface
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(1015, 154);
+            this.label3.Location = new System.Drawing.Point(485, 138);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 18);
@@ -335,7 +321,7 @@ namespace CarPark.Interface
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1161, 638);
+            this.ClientSize = new System.Drawing.Size(1359, 767);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnTransfer);
@@ -384,7 +370,6 @@ namespace CarPark.Interface
         private System.Windows.Forms.Button btnTransfer;
         private System.Windows.Forms.Label lblNo;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
         private Bunifu.Framework.UI.BunifuImageButton btnExcel;
         private System.Windows.Forms.Label label3;
     }
