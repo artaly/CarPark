@@ -31,13 +31,9 @@ namespace CarPark.Interface
 
         public void DataLoader()
         {
-            dtpFromDate.Format = DateTimePickerFormat.Custom;
-            dtpToDate.Format = DateTimePickerFormat.Custom;
-
-            dtpFromDate.CustomFormat = "M/d/yyyy";
-            dtpToDate.CustomFormat = "M/d/yyyy";
-            con.Open(); 
-            QuerySelect = "SELECT date as 'Date', license_name AS 'PLATE NUMBER', car_type AS 'TYPE', dateti as 'TIME IN', dateto as 'TIME OUT', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT PAID', issued_by as 'Issued By' FROM policy_list WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "' ORDER BY date ASC";
+            
+            con.Open();
+            QuerySelect = "SELECT date as 'Date', license_name AS 'PLATE NUMBER', car_type AS 'TYPE', dateti as 'TIME IN', dateto as 'TIME OUT', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT PAID', issued_by as 'Issued By' FROM policy_list";
             cmd = new SqlCommand(QuerySelect, con);
 
             adapter = new SqlDataAdapter(cmd);
@@ -50,27 +46,59 @@ namespace CarPark.Interface
             dgtTransactionDetails.Refresh();
             dgtTransactionDetails.Columns[0].Visible = false;
 
-            cmd = con.CreateCommand();
-            con.Open();
-            cmd.CommandText = "SELECT SUM(amountpay) FROM policy_list WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "'";
-
-            try
-            {
-                var obj = cmd.ExecuteScalar();
-                double result = obj != null ? (double)obj : 0;
-                
-                lblTotal.Text = "PHP " + result.ToString();
-            } catch
-            {
-                MessageBox.Show("No transaction left!");
-            }
-            con.Close();
-
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             DataLoader();
+            try
+            {
+                dtpFromDate.Format = DateTimePickerFormat.Custom;
+                dtpToDate.Format = DateTimePickerFormat.Custom;
+
+                dtpFromDate.CustomFormat = "M/d/yyyy";
+                dtpToDate.CustomFormat = "M/d/yyyy";
+                con.Open();
+
+                QuerySelect = "SELECT date as 'Date', license_name AS 'PLATE NUMBER', car_type AS 'TYPE', dateti as 'TIME IN', dateto as 'TIME OUT', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT PAID', issued_by as 'Issued By' FROM policy_list WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "' ORDER BY date ASC";
+
+                cmd = new SqlCommand(QuerySelect, con);
+
+                adapter = new SqlDataAdapter(cmd);
+                con.Close();
+
+                dt = new DataTable();
+                adapter.Fill(dt);
+
+                dgtTransactionDetails.DataSource = dt;
+                dgtTransactionDetails.Refresh();
+
+                lblTotal.Visible = true;
+                lblForTotal.Visible = true;
+
+
+                cmd = con.CreateCommand();
+                con.Open();
+                cmd.CommandText = "SELECT SUM(amountpay) FROM policy_list WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "'";
+
+                try
+                {
+                    var obj = cmd.ExecuteScalar();
+                    double result = obj != null ? (double)obj : 0;
+
+                    lblTotal.Text = "PHP " + result.ToString();
+                }
+                catch
+                {
+                    //MessageBox.Show("No transaction!");
+                }
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -86,6 +114,9 @@ namespace CarPark.Interface
 
         private void PolicyList_Load(object sender, EventArgs e)
         {
+            lblTotal.Visible = false;
+            lblForTotal.Visible = false;
+
             QuerySelect = "SELECT id as 'ID', date as 'Date', license_name AS 'PLATE NUMBER', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT UNPAID' FROM policy_list ORDER BY date ASC";
             cmd = new SqlCommand(QuerySelect, con);
             
