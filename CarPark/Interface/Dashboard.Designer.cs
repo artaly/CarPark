@@ -155,7 +155,7 @@ namespace CarPark
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Corbel", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
             this.label1.Location = new System.Drawing.Point(178, 277);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -260,7 +260,7 @@ namespace CarPark
             this.lblTimeout.AutoSize = true;
             this.lblTimeout.BackColor = System.Drawing.Color.Transparent;
             this.lblTimeout.Font = new System.Drawing.Font("Corbel", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimeout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblTimeout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
             this.lblTimeout.Location = new System.Drawing.Point(112, 469);
             this.lblTimeout.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTimeout.Name = "lblTimeout";
@@ -273,7 +273,7 @@ namespace CarPark
             this.lblTimeIn.AutoSize = true;
             this.lblTimeIn.BackColor = System.Drawing.Color.Transparent;
             this.lblTimeIn.Font = new System.Drawing.Font("Corbel", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimeIn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblTimeIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
             this.lblTimeIn.Location = new System.Drawing.Point(144, 351);
             this.lblTimeIn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTimeIn.Name = "lblTimeIn";
@@ -286,7 +286,7 @@ namespace CarPark
             this.lblColor.AutoSize = true;
             this.lblColor.BackColor = System.Drawing.Color.Transparent;
             this.lblColor.Font = new System.Drawing.Font("Corbel", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblColor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
             this.lblColor.Location = new System.Drawing.Point(150, 200);
             this.lblColor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblColor.Name = "lblColor";
@@ -308,7 +308,7 @@ namespace CarPark
             this.lblBrand.AutoSize = true;
             this.lblBrand.BackColor = System.Drawing.Color.Transparent;
             this.lblBrand.Font = new System.Drawing.Font("Corbel", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrand.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblBrand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
             this.lblBrand.Location = new System.Drawing.Point(147, 124);
             this.lblBrand.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBrand.Name = "lblBrand";
@@ -330,7 +330,7 @@ namespace CarPark
             this.lblLicense.AutoSize = true;
             this.lblLicense.BackColor = System.Drawing.Color.Transparent;
             this.lblLicense.Font = new System.Drawing.Font("Corbel", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLicense.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblLicense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
             this.lblLicense.Location = new System.Drawing.Point(34, 53);
             this.lblLicense.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLicense.Name = "lblLicense";
@@ -358,7 +358,7 @@ namespace CarPark
             // 
             this.lblOccupied.AutoSize = true;
             this.lblOccupied.Font = new System.Drawing.Font("Corbel", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOccupied.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblOccupied.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
             this.lblOccupied.Location = new System.Drawing.Point(412, 20);
             this.lblOccupied.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOccupied.Name = "lblOccupied";
@@ -370,7 +370,7 @@ namespace CarPark
             // 
             this.lblAvailable.AutoSize = true;
             this.lblAvailable.Font = new System.Drawing.Font("Corbel", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvailable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblAvailable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
             this.lblAvailable.Location = new System.Drawing.Point(41, 20);
             this.lblAvailable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAvailable.Name = "lblAvailable";
@@ -557,12 +557,12 @@ namespace CarPark
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblUser.Font = new System.Drawing.Font("Corbel", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUser.Location = new System.Drawing.Point(19, 107);
+            this.lblUser.Font = new System.Drawing.Font("Corbel", 25.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
+            this.lblUser.Location = new System.Drawing.Point(19, 111);
             this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(142, 54);
+            this.lblUser.Size = new System.Drawing.Size(138, 54);
             this.lblUser.TabIndex = 4;
             this.lblUser.Text = "NAME";
             // 
@@ -571,7 +571,7 @@ namespace CarPark
             this.lblUserType.AutoSize = true;
             this.lblUserType.BackColor = System.Drawing.Color.Transparent;
             this.lblUserType.Font = new System.Drawing.Font("Corbel", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserType.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblUserType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
             this.lblUserType.Location = new System.Drawing.Point(221, 33);
             this.lblUserType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserType.Name = "lblUserType";
@@ -585,7 +585,7 @@ namespace CarPark
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Corbel", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
             this.label5.Location = new System.Drawing.Point(21, 33);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
