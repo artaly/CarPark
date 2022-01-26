@@ -92,6 +92,8 @@ namespace CarPark.Interface
             } catch (Exception b)
             {
                 MessageBox.Show("Invalid credentials!");
+                tbxUsername.Text = "";
+                tbxPassword.Text = "";
             }
         }
 
