@@ -33,7 +33,6 @@ namespace CarPark.Interface
             this.btnLogin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblClose = new System.Windows.Forms.PictureBox();
-            this.lblForgotPassword = new System.Windows.Forms.Label();
             this.tbxUsername = new System.Windows.Forms.TextBox();
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -99,18 +98,6 @@ namespace CarPark.Interface
             this.lblClose.TabStop = false;
             this.lblClose.Click += new System.EventHandler(this.lblClose_Click_1);
             // 
-            // lblForgotPassword
-            // 
-            this.lblForgotPassword.AutoSize = true;
-            this.lblForgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(140)))), ((int)(((byte)(160)))));
-            this.lblForgotPassword.Location = new System.Drawing.Point(287, 448);
-            this.lblForgotPassword.Name = "lblForgotPassword";
-            this.lblForgotPassword.Size = new System.Drawing.Size(161, 24);
-            this.lblForgotPassword.TabIndex = 10;
-            this.lblForgotPassword.Text = "Forgot password?";
-            this.lblForgotPassword.Click += new System.EventHandler(this.lblForgotPassword_Click);
-            // 
             // tbxUsername
             // 
             this.tbxUsername.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -161,7 +148,6 @@ namespace CarPark.Interface
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbxPassword);
             this.Controls.Add(this.tbxUsername);
-            this.Controls.Add(this.lblForgotPassword);
             this.Controls.Add(this.lblClose);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
@@ -181,7 +167,6 @@ namespace CarPark.Interface
         private Bunifu.Framework.UI.BunifuFlatButton btnLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox lblClose;
-        private System.Windows.Forms.Label lblForgotPassword;
         private System.Windows.Forms.TextBox tbxUsername;
         private System.Windows.Forms.TextBox tbxPassword;
         private System.Windows.Forms.Label label1;
