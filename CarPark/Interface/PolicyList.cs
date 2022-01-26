@@ -50,7 +50,6 @@ namespace CarPark.Interface
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataLoader();
             try
             {
                 dtpFromDate.Format = DateTimePickerFormat.Custom;
@@ -60,7 +59,7 @@ namespace CarPark.Interface
                 dtpToDate.CustomFormat = "M/d/yyyy";
                 con.Open();
 
-                QuerySelect = "SELECT date as 'Date', license_name AS 'PLATE NUMBER', car_type AS 'TYPE', dateti as 'TIME IN', dateto as 'TIME OUT', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT PAID', issued_by as 'Issued By' FROM policy_list WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "' ORDER BY date ASC";
+                QuerySelect = "SELECT id as 'ID', date as 'Date', license_name AS 'PLATE NUMBER', car_type AS 'TYPE', dateti as 'TIME IN', dateto as 'TIME OUT', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT PAID', issued_by as 'Issued By' FROM policy_list WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "' ORDER BY date ASC";
 
                 cmd = new SqlCommand(QuerySelect, con);
 
@@ -72,6 +71,7 @@ namespace CarPark.Interface
 
                 dgtTransactionDetails.DataSource = dt;
                 dgtTransactionDetails.Refresh();
+                dgtTransactionDetails.Columns[0].Visible = false;
 
                 lblTotal.Visible = true;
                 lblForTotal.Visible = true;
@@ -116,8 +116,8 @@ namespace CarPark.Interface
         {
             lblTotal.Visible = false;
             lblForTotal.Visible = false;
+            QuerySelect = "SELECT id as 'ID', date as 'Date', license_name AS 'PLATE NUMBER', car_type AS 'TYPE', dateti as 'TIME IN', dateto as 'TIME OUT', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT UNPAID', issued_by as 'Issued By' FROM policy_list ORDER BY date ASC";
 
-            QuerySelect = "SELECT id as 'ID', date as 'Date', license_name AS 'PLATE NUMBER', total_hours AS 'TOTAL HOURS PARKED', amountpay AS 'AMOUNT UNPAID' FROM policy_list ORDER BY date ASC";
             cmd = new SqlCommand(QuerySelect, con);
             
             adapter = new SqlDataAdapter(cmd);
@@ -150,6 +150,14 @@ namespace CarPark.Interface
             cmd = new SqlCommand(QueryDelete, con);
             cmd.ExecuteNonQuery();
             con.Close();
+
+            cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "SELECT SUM(amountpay) FROM policy_list WHERE date>='" + dtpFromDate.Text + "' AND date<='" + dtpToDate.Text + "'";
+
+            lblTotal.Visible = false;
+            lblForTotal.Visible = false;
+
             DataLoader();
         }
 

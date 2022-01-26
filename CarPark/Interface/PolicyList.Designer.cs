@@ -204,13 +204,12 @@ namespace CarPark.Interface
             this.dgtTransactionDetails.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dgtTransactionDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgtTransactionDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgtTransactionDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgtTransactionDetails.Location = new System.Drawing.Point(0, 0);
+            this.dgtTransactionDetails.Location = new System.Drawing.Point(0, 57);
             this.dgtTransactionDetails.Margin = new System.Windows.Forms.Padding(4);
             this.dgtTransactionDetails.Name = "dgtTransactionDetails";
             this.dgtTransactionDetails.ReadOnly = true;
             this.dgtTransactionDetails.RowHeadersWidth = 51;
-            this.dgtTransactionDetails.Size = new System.Drawing.Size(1277, 518);
+            this.dgtTransactionDetails.Size = new System.Drawing.Size(1276, 461);
             this.dgtTransactionDetails.TabIndex = 34;
             this.dgtTransactionDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgtTransactionDetails_CellClick);
             // 
