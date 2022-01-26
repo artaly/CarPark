@@ -316,6 +316,7 @@ namespace CarPark.Interface
             this.btnExcel.TabIndex = 41;
             this.btnExcel.TabStop = false;
             this.btnExcel.Zoom = 10;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // label3
             // 
