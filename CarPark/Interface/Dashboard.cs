@@ -435,55 +435,63 @@ namespace CarPark
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int available;
-            using (var con = new SqlConnection(UserSQL.ConString))
+            if (dtgData.Rows.Count == 0)
             {
-                var sql = "SELECT available_slots FROM car_slots";
-                using (var cmd = new SqlCommand(sql, con))
-                {
-                    cmd.Parameters.AddWithValue("@license_name", tbxLicense.Text);
-                    con.Open();
-                    available = (int)cmd.ExecuteScalar();
-
-                }
+                MessageBox.Show("No data available for deletion");
             }
+            
+            else { 
 
-            int occupied;
-
-            using (var con = new SqlConnection(UserSQL.ConString))
-            {
-                var sql = "SELECT occupied_slots FROM car_slots";
-                using (var cmd = new SqlCommand(sql, con))
+                int available;
+                using (var con = new SqlConnection(UserSQL.ConString))
                 {
-                    cmd.Parameters.AddWithValue("@license_name", tbxLicense.Text);
-                    con.Open();
-                    occupied = (int)cmd.ExecuteScalar();
+                    var sql = "SELECT available_slots FROM car_slots";
+                    using (var cmd = new SqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@license_name", tbxLicense.Text);
+                        con.Open();
+                        available = (int)cmd.ExecuteScalar();
 
+                    }
                 }
+
+                int occupied;
+
+                using (var con = new SqlConnection(UserSQL.ConString))
+                {
+                    var sql = "SELECT occupied_slots FROM car_slots";
+                    using (var cmd = new SqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@license_name", tbxLicense.Text);
+                        con.Open();
+                        occupied = (int)cmd.ExecuteScalar();
+
+                    }
+                }
+
+                available = available + 1;
+                occupied = occupied - 1;
+
+                lblAvailableSlot.Text = available.ToString();
+                lblOccupiedSlot.Text = occupied.ToString();
+                con.Close();
+                con.Open();
+                QueryDelete = "DELETE FROM car_transactions WHERE license_name='" + tbxLicense.Text + "'";
+                cmd = new SqlCommand(QueryDelete, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                MessageBox.Show("Deleted Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                QueryUpdate = "UPDATE car_slots SET available_slots='" + available + "', occupied_slots='" + occupied + "'";
+                con.Open();
+                cmd = new SqlCommand(QueryUpdate, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                ClearAll();
+                DataLoader();
             }
-
-            available = available + 1;
-            occupied = occupied - 1;
-
-            lblAvailableSlot.Text = available.ToString();
-            lblOccupiedSlot.Text = occupied.ToString();
-            con.Close();
-            con.Open();
-            QueryDelete = "DELETE FROM car_transactions WHERE license_name='" + tbxLicense.Text + "'";
-            cmd = new SqlCommand(QueryDelete, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-
-            MessageBox.Show("Deleted Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-            QueryUpdate = "UPDATE car_slots SET available_slots='" + available + "', occupied_slots='" + occupied + "'";
-            con.Open();
-            cmd = new SqlCommand(QueryUpdate, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-            ClearAll();
-            DataLoader();
         }
 
         private void lblClose_Click(object sender, EventArgs e)
