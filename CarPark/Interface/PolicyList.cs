@@ -157,7 +157,7 @@ namespace CarPark.Interface
 
             lblTotal.Visible = false;
             lblForTotal.Visible = false;
-
+            con.Close();
             DataLoader();
         }
 
